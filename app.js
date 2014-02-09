@@ -4,9 +4,11 @@ var logfmt = require("logfmt");
 var app = express();
 
 app.use(logfmt.requestLogger());
+app.use(express.static(__dirname + "/public"));
+app.use(express.static('views/'));
 
 app.get('/', function(req, res) {
-  res.send('Hello World!');
+  res.sendfile("views/index.html");
 });
 
 var port = Number(process.env.PORT || 5000);

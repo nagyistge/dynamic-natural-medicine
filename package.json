@@ -1,0 +1,22 @@
+{
+  "name": "dynamic-natural-medicine",
+  "version": "0.0.0",
+  "description": "Dynamic Natural Medicine",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://dreadjr@github.com/dreadjr/dynamic-natural-medicine.git"
+  },
+  "keywords": [],
+  "dependencies": {
+    "express": "*",
+    "logfmt": "*"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "fd489717b447901dcac583daf891f9385065a138"
+}

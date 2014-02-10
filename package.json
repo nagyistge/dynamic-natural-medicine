@@ -4,7 +4,7 @@
   "description": "Dynamic Natural Medicine",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -14,6 +14,13 @@
   "dependencies": {
     "express": "*",
     "logfmt": "*"
+  },
+  "devDependencies": {
+    "mocha": "*"
+    "should": "*",
+    "sinon": "*",
+    "zombie": "*",
+    "always": "*"
   },
   "author": "",
   "license": "BSD",

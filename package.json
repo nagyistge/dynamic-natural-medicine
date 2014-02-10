@@ -18,7 +18,7 @@
     "bower": "*"
   },
   "devDependencies": {
-    "node-sass": "~0.7.0",
+    "node-sass": "*",
     "grunt": "*",
     "grunt-sass": "*",
     "grunt-contrib-cssmin": "*",
@@ -27,6 +27,20 @@
     "grunt-cssc": "*",
     "grunt-htmlhint": "*",
     "matchdep": "*",
+
+
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-uncss": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-usemin": "*",
+    "grunt-express": "*",
+
+
 
     "mocha": "*",
     "should": "*",

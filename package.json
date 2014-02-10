@@ -13,16 +13,28 @@
   "keywords": [],
   "dependencies": {
     "express": "*",
-    "logfmt": "*"
+    "logfmt": "*",
+    "grunt-cli": "*",
+    "bower": "*"
   },
   "devDependencies": {
-    "mocha": "*"
+    "node-sass": "~0.7.0",
+    "grunt": "*",
+    "grunt-sass": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-cssc": "*",
+    "grunt-htmlhint": "*",
+    "matchdep": "*",
+
+    "mocha": "*",
     "should": "*",
     "sinon": "*",
     "zombie": "*",
     "always": "*"
   },
-  "author": "",
+  "author": "dreadjr",
   "license": "BSD",
   "readmeFilename": "README.md",
   "gitHead": "fd489717b447901dcac583daf891f9385065a138"

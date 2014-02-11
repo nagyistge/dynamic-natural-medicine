@@ -4,24 +4,17 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    connect: {
-      app: {
-        options: {
-          server: path.resolve(__dirname, 'config/express.js'),
-          livereload: true,
-          serverreload: true
-        }
-      }
-    },
-
-
     express: {
-      default_option: {},
+      options: {
+        port: 5000,
+        hostname: '*'
+      },
       app: {
         options: {
           server: path.resolve(__dirname, './express.js'),
           livereload: true,
-          serverreload: true
+          serverreload: false,
+          bases: [path.resolve(__dirname, 'public')]
         }
       }
     },
@@ -45,7 +38,11 @@ module.exports = function(grunt) {
 
       sass: {
         files: 'scss/**/*.scss',
-        tasks: ['sass']
+        tasks: ['sass'],
+
+        options: {
+          livereload: true
+        }
       }
     }
   });
@@ -62,7 +59,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-connect');
+  //grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-express');
 
@@ -71,5 +68,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['sass']);
   //grunt.registerTask('default', ['build','watch']);
   grunt.registerTask('default', ['build','express','watch']);
+  //grunt.registerTask('default', ['express','watch']);
+  //grunt.registerTask('default', ['build','express','watch']);
   //grunt.registerTask('default', ['build','connect:app','watch']);
 }

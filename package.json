@@ -27,21 +27,15 @@
     "grunt-cssc": "*",
     "grunt-htmlhint": "*",
     "matchdep": "*",
-
-
     "grunt-contrib-clean": "*",
     "grunt-contrib-copy": "*",
-    "grunt-contrib-cssmin": "*",
     "grunt-uncss": "*",
-    "grunt-contrib-uglify": "*",
     "grunt-contrib-concat": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-connect": "*",
     "grunt-usemin": "*",
     "grunt-express": "*",
-
-
-
+    "grunt-contrib-jade": "~0.10.0",
     "mocha": "*",
     "should": "*",
     "sinon": "*",

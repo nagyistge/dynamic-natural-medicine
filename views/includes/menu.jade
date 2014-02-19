@@ -1,0 +1,42 @@
+//.top-bar-line
+  // Navigation
+  // <div data-magellan-expedition="fixed" class="fixed">
+.fixed
+  //.sticky
+  nav.top-bar(data-topbar='data-topbar')
+    ul.title-area
+      // Title Area
+      li.name
+        h1
+          a(href='#') Dynamic
+      li.toggle-topbar.menu-icon
+        a(href='#')
+          span menu
+    section.top-bar-section
+      // Right Nav Section
+      ul.right
+        li(data-magellan-arrival='about')
+          a(href='#about')
+            span About
+        li(data-magellan-arrival='new')
+          a(href='#new')
+            span New Patients
+        li(data-magellan-arrival='contact')
+          a(href='#contact')
+            span Contact
+        //
+                    <div data-magellan-expedition="fixed">
+                        <dl class="sub-nav">
+                            <dd data-magellan-arrival="build"><a href="#build">Build with HTML</a></dd>
+                            <dd data-magellan-arrival="js"><a href="#js">Arrival 2</a></dd>
+                        </dl>
+                    </div>
+        // End Top Bar
+  // Header
+  //
+      <div class="row">
+          <div class="large-12 columns">
+              <img src="http://placehold.it/1600x600&text=Header"><br><br>
+          </div>
+      </div>
+  // End Header

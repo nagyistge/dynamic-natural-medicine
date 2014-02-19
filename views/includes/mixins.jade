@@ -1,0 +1,29 @@
+mixin link(href, name)
+  a(class!=attributes.class, href=href)= name
+
+mixin section-header()
+  header
+    yield
+
+mixin section-content()
+  div
+    yield
+
+mixin test
+  section.slide-section(data-magellan-destination=!attributes.id, id=!attributes.id)
+    +section-header()
+    +section-content()
+
++test#section1
+  h1 Hello1
+  div Content1
+
+mixin section()
+  section.slide-section(data-magellan-destination=!attributes.id, id=!attributes.id)
+    header
+      block header
+    div
+      block section-content// can only do this with includes
+// https://github.com/visionmedia/jade/issues/631
+
+

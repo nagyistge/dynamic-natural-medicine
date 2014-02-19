@@ -14,14 +14,14 @@ module.exports = function(grunt) {
           server: path.resolve(__dirname, './express.js'),
           livereload: true,
           serverreload: false,
-          bases: [path.resolve(__dirname, 'public')]
+          bases: [path.resolve(__dirname, 'public'), path.resolve(__dirname, 'views')]
         }
       }
     },
 
     sass: {
       options: {
-        includePaths: ['bower_components/foundation/scss']
+        includePaths: ['bower_components/foundation/scss','bower_components/font-awesome/scss']
       },
       dist: {
         options: {
@@ -30,6 +30,22 @@ module.exports = function(grunt) {
         files: {
           'public/css/app.css': 'scss/app.scss'
         }        
+      }
+    },
+
+    jade: {
+      compile: {
+        options: {
+          client: false,
+          pretty: true
+        },
+        files: [ {
+          cwd: "views",
+          src: ["**/*.jade","!includes/**/*.jade","!layout.jade"],
+          dest: "views",
+          expand: true,
+          ext: ".html"
+        } ]
       }
     },
 
@@ -43,6 +59,15 @@ module.exports = function(grunt) {
         options: {
           livereload: true
         }
+      },
+
+      jade: {
+        files: ['views/**/*.jade'],
+        tasks: ['jade'],
+
+        options: {
+          livereload: true
+        }
       }
     }
   });
@@ -50,6 +75,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
+
+  // TODO: Use jade and compile into html with https://www.npmjs.org/package/grunt-contrib-jade
 
 
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -62,13 +89,10 @@ module.exports = function(grunt) {
   //grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-express');
+  grunt.loadNpmTasks('grunt-contrib-jade');
 
 
 
-  grunt.registerTask('build', ['sass']);
-  //grunt.registerTask('default', ['build','watch']);
+  grunt.registerTask('build', ['sass','jade']);
   grunt.registerTask('default', ['build','express','watch']);
-  //grunt.registerTask('default', ['express','watch']);
-  //grunt.registerTask('default', ['build','express','watch']);
-  //grunt.registerTask('default', ['build','connect:app','watch']);
 }

@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha",
-    "postinstall": "./node_modules/grunt/lib/grunt build"
+    "preinstall": "npm install -g grunt bower",
+    "postinstall": "grunt build"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
-var webknit = webknit || {};
+var dnm = dnm || {};
 
-webknit.preload = function()
+dnm.preload = function()
 {
   $(window).load(function() {
     $('.loading-image').hide();
@@ -9,7 +9,7 @@ webknit.preload = function()
   });
 };
 
-webknit.navigation = function()
+dnm.navigation = function()
 {
   var mobileNav = $('.mobile-nav');
   var mainNav = $('.main-nav');
@@ -42,7 +42,7 @@ webknit.navigation = function()
   init();
 };
 
-webknit.pageMoveAction = function()
+dnm.pageMoveAction = function()
 {
   var $document = $(document);
   var bg = $('.bg-pic');
@@ -91,7 +91,7 @@ webknit.pageMoveAction = function()
   init();
 };
 
-webknit.showMoreWork = function()
+dnm.showMoreWork = function()
 {
   var showWork = $('.show-work');
   var whiteBox = $('.white-box');
@@ -132,7 +132,7 @@ webknit.showMoreWork = function()
   init();
 };
 
-webknit.animations = function()
+dnm.animations = function()
 {
   var showWork = $('.show-work');
 
@@ -158,7 +158,7 @@ webknit.animations = function()
   init();
 };
 
-webknit.retinaDetect = function()
+dnm.retinaDetect = function()
 {
   var retina = window.devicePixelRatio > 1;
   var retinaImage = $('.detect-retina');
@@ -195,16 +195,68 @@ webknit.retinaDetect = function()
   init();
 };
 
+dnm.trackOutboundLink = function() {
+  var $this = $(this);
+  console.log($this);
+
+  var url = $this.attr("href");
+  console.log(url);
+
+  setTimeout(function() {
+
+  ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+    function () {
+      //document.location = url;
+    }
+  });
+  }, 5000);
+
+}
+
 $(function()
 {
   //$(document).foundation({ "magellan-expedition": { destination_threshold: 85 } });
   $(document).foundation({ "magellan-expedition": { destination_threshold: 100 } });
 
-  //new webknit.preload();
-  //new webknit.navigation();
-  new webknit.pageMoveAction();
-  //new webknit.showMoreWork();
-  //new webknit.animations();
-  //new webknit.retinaDetect();
+  //new dnm.preload();
+  //new dnm.navigation();
+  new dnm.pageMoveAction();
+  //new dnm.showMoreWork();
+  //new dnm.animations();
+  //new dnm.retinaDetect();
+
+    function checkIfExternalLink(href) {
+      return href.charAt(0) != '.' && href.charAt(0) != '#' && (href.charAt(0) != '/' || (href.indexOf("//") == 0 ));
+    }
+
+    // TODO: setup testing...
+    console.log(checkIfExternalLink("/about"));
+    console.log(checkIfExternalLink("./doug"));
+    console.log(checkIfExternalLink("#about"));
+    console.log(checkIfExternalLink("//"));
+    console.log(checkIfExternalLink("http://www"));
+    console.log(checkIfExternalLink("https://www"));
+
+    $('a:not([href*="' + document.domain + '"])').mousedown(function(event){
+      // Just in case, be safe and don't do anything
+      if (typeof ga == 'undefined') {
+        return;
+      }
+
+      var link = $(this);
+      var href = link.attr('href');
+      if (checkIfExternalLink(href)) {
+        var noProtocol = href.replace(/http[s]?:\/\//, '');
+
+        // Track the event
+        //_gat._getTrackerByName()._trackEvent('Outbound Links', noProtocol);
+        ga('send', 'event', 'outbound', 'click', noProtocol, {
+          'hitCallback': function() {
+            //console.log("tracked external link click");
+          }
+        });
+      }
+    });
+
 
 });

@@ -60,9 +60,19 @@ body {
   background: rgba(0,0,0,0);
 }
 
-nav.top-bar {
+.sticky:not(.fixed) > nav.top-bar {
+  margin-top: -$topbar-height;
   background-color: rgba(255,255,255,0.9);
+
+}
+
+
+// TODO: make variables for colors, once figure them out.
+
+nav.top-bar {
+  background-color: rgba(255,255,255,1.0);
   border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-top: 5px solid #2d81c1;
   text-transform: uppercase;
   //background-color: #2d81c1;
   //border-top: 2px solid #91B1FA;
@@ -104,6 +114,7 @@ section.slide-section {
   padding: 50px;
 
   @include grid-row;
+
   //padding: 120px 0;
 
   header {
@@ -120,6 +131,10 @@ section.slide-section {
     @include grid-column(12);
     padding: 0 0 120px 0;
   }
+}
+
+section.slide-section.full {
+  max-width: 100%;
 }
 
 footer {
@@ -396,6 +411,7 @@ $hh: 400px;
 }
 .sbtn-container {
   position: relative;
+  text-align: center;
 }
 .sbtn-top {
   position: absolute;

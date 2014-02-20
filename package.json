@@ -4,7 +4,6 @@
   "description": "Dynamic Natural Medicine",
   "main": "app.js",
   "scripts": {
-    "test": "mocha",
     "postinstall": "./node_modules/bower/bin/bower install"
   },
   "repository": {

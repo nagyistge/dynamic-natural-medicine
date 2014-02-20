@@ -371,7 +371,8 @@ footer {
   height: 100%; // had screen media query
 
   @media #{$small-only} {
-    height: $topbar-height;
+    height: $topbar-height + 5;
+    background: $secondary-color;
   }
 }
 

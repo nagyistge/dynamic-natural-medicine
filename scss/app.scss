@@ -97,6 +97,20 @@ nav.top-bar {
   //-webkit-box-shadow: 0 5px orange;
   //box-shadow: 0 5px orange;
   text-align: left;
+
+  &.expanded {
+    background-color: rgba(255,255,255,1.0);
+
+    .toggle-topbar {
+      a {
+        span {
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
 }
 
 .top-bar-section {

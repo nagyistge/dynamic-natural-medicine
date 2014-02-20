@@ -4,9 +4,7 @@
   "description": "Dynamic Natural Medicine",
   "main": "app.js",
   "scripts": {
-    "test": "mocha",
-    "preinstall": "npm install -g grunt",
-    "postinstall": "grunt build"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

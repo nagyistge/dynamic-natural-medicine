@@ -95,4 +95,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', ['sass','jade']);
   grunt.registerTask('default', ['build','express','watch']);
+  grunt.registerTask('heroku', ['build']);
 }

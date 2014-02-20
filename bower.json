@@ -3,6 +3,6 @@
   "dependencies": {
     "foundation": "zurb/bower-foundation",
     "font-awesome": "*",
-    "jQuery": "*"
+    "jquery": "*"
   }
 }

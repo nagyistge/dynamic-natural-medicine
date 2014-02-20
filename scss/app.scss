@@ -42,6 +42,13 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
+$primary-color: #2D81C1;
+$secondary-color: #C12D81;
+$ternary-color: #81C12D;
+
+$footer-background: $primary-color;
+$section-slide-background: $primary-color;
+
 body {
   font-family: 'proxima-nova', sans-serif;
 }
@@ -52,7 +59,7 @@ body {
   top: 0;
   height: 5px;
   width: 100%;
-  background-color: #2d81c1;
+  background-color: $primary-color;
   border-top: 2px solid #91B1FA;
 }
 
@@ -81,7 +88,7 @@ body {
 nav.top-bar {
   background-color: rgba(255,255,255,1.0);
   border-bottom: 1px solid rgba(0,0,0,0.1);
-  border-top: 5px solid #2d81c1;
+  border-top: 5px solid $primary-color;
   text-transform: uppercase;
   //background-color: #2d81c1;
   //border-top: 2px solid #91B1FA;
@@ -124,16 +131,16 @@ nav.top-bar {
 
 .top-bar-section {
   ul li:hover > a > span {
-    border-bottom: 2px solid #2d81c1;
+    border-bottom: 2px solid $primary-color;
   }
 }
 
 section.slide-section:nth-of-type(odd) {
-  background: #e0e0e0;
+  background: $secondary-color;
 }
 
 section.slide-section {
-  background: #2d81c1;
+  background: $section-slide-background;
   padding: 50px;
 
   @include grid-row;
@@ -161,7 +168,7 @@ section.slide-section.full {
 }
 
 footer {
-  background: #2D81C1;
+  background: $footer-background;
   padding: 20px 0;
   text-align: center;
 
@@ -188,7 +195,7 @@ footer {
 
 .social-row {
   @include grid-row;
-  background: #999;
+  background: $secondary-color;
   max-width: 100%;
 
   div {
@@ -240,10 +247,10 @@ footer {
   transition: all 0.8s;
 }
 .sbtn:hover {
-  background: #e71c37;
+  background: $ternary-color;
 }
 .sbtn:active {
-  background: #9053a9; /* click */
+  background: $primary-color; /* click */
 }
 .sbtn span {
   display: inline-block;

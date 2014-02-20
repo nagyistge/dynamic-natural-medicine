@@ -220,7 +220,7 @@ $(function()
 
   //new dnm.preload();
   //new dnm.navigation();
-  new dnm.pageMoveAction();
+  //new dnm.pageMoveAction();
   //new dnm.showMoreWork();
   //new dnm.animations();
   //new dnm.retinaDetect();

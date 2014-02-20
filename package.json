@@ -16,6 +16,7 @@
     "express": "*",
     "logfmt": "*",
     "grunt-cli": "*",
+    "grunt": "*",
     "bower": "*"
   },
   "devDependencies": {

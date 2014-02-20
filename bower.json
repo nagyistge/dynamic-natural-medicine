@@ -2,6 +2,7 @@
   "name": "foundation-libsass-template",
   "dependencies": {
     "foundation": "zurb/bower-foundation",
-    "font-awesome": "~4.0.3"
+    "font-awesome": "*",
+    "jQuery": "*"
   }
 }

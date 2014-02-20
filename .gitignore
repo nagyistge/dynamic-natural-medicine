@@ -16,5 +16,7 @@ npm-debug.log
 node_modules
 .idea
 bower_components
+.bower-cache
+.bower-registry
 
 #/css/*

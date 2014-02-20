@@ -371,9 +371,13 @@ footer {
   height: 100%; // had screen media query
 
   @media #{$small-only} {
-    height: $topbar-height + 5;
-    background: $secondary-color;
+    height: $topbar-height;  // + 5
+    //background: $secondary-color;
   }
+}
+
+body.f-topbar-fixed .entry {
+  height: 0;
 }
 
 section.slide-section:first-of-type {

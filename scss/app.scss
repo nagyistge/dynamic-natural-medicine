@@ -185,7 +185,7 @@ nav.top-bar {
 }
 
 section.slide-section#about {
-  background: #fff;
+  //background: #fff;
   color: #333;
 }
 
@@ -196,6 +196,7 @@ section.slide-section:nth-of-type(odd) {
 section.slide-section {
   background: $section-slide-background;
   padding: $topbar-height;
+  min-height: 100%;
   //padding: em-calc(50);
 
   @include grid-row;
@@ -214,7 +215,7 @@ section.slide-section {
 
   > div {
     @include grid-column(12);
-    padding: 0 0 em-calc(120) 0;
+    //padding: 0 0 em-calc(120) 0;
   }
 }
 

@@ -74,10 +74,27 @@ body {
 .sticky:not(.fixed) > nav.top-bar {
   margin-top: -$topbar-height;
   background-color: rgba(255,255,255,0.9);
+
+  @media #{$small-only} {
+    margin-top: 0;
+  }
 }
 
+
+/*
+// TODO: this is not working, showing on all media queries
+.sticky:not(.fixed) {
+  @media #{$small-only} {
+    @extend .fixed;
+  }
+}
+*/
+
+
+
+
 body.f-topbar-fixed .entry {
-  //height: 0;
+  // height: 0;
   //display: none;
 }
 
@@ -108,7 +125,8 @@ body.f-topbar-fixed {
   height: 100%; // had screen media query
 
   @media #{$small-only} {
-    height: $topbar-height;  // + 5
+    //height: $topbar-height;  // + 5
+    height: 0;
   }
 }
 

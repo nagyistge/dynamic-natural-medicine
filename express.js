@@ -13,4 +13,19 @@ app.get('/doug', function(req, res) {
   res.sendfile("views/foundation.html");
 });
 
+
+/*
+var transport = nodemailer.createTransport("SMTP", {
+  service: "Gmail",
+  auth: {
+    user: "gmail.user@gmail.com",
+    pass: "userpass"
+  }
+});
+*/
+
+app.get('*', function(req, res) {
+  res.send("404");
+});
+
 module.exports = app;

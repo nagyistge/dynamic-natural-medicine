@@ -4,6 +4,8 @@
 $fa-font-path: "/bower_components/font-awesome/fonts";
 @import "font-awesome";
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
 // Or selectively include components
 // @import
 //   "foundation/components/accordion",
@@ -50,7 +52,9 @@ $footer-background: $primary-color;
 $section-slide-background: $primary-color;
 
 body {
-  font-family: 'proxima-nova', sans-serif;
+  //font-family: 'proxima-nova', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  //text-shadow: 0 -1px #eee, 1px 0 #eee, 0 1px #eee, -1px 0 #eee;
 }
 
 .top-bar-line {
@@ -70,10 +74,52 @@ body {
 .sticky:not(.fixed) > nav.top-bar {
   margin-top: -$topbar-height;
   background-color: rgba(255,255,255,0.9);
+}
 
+body.f-topbar-fixed .entry {
+  //height: 0;
+  //display: none;
+}
+
+body {
+  @media #{$small-only} {
+    @extend .f-topbar-fixed;
+  }
+}
+
+body.f-topbar-fixed {
+  @media #{$small-only} {
+    padding-top: 0;
+  }
+}
+
+.panel {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+.entry {
+  background-position: center center;
+  height: 500px;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 100%; // had screen media query
+
+  @media #{$small-only} {
+    height: $topbar-height;  // + 5
+  }
+}
+
+
+
+section.slide-section:first-of-type {
+  //margin-top: 400px;
 }
 
 // TODO: make variables for colors, once figure them out.
+/*
 .menu {
   @media #{$small-only} {
     @extend .fixed;
@@ -84,6 +130,7 @@ body {
     @extend .sticky;
   }
 }
+*/
 
 nav.top-bar {
   background-color: rgba(255,255,255,1.0);
@@ -130,9 +177,16 @@ nav.top-bar {
 }
 
 .top-bar-section {
-  ul li:hover > a > span {
-    border-bottom: 2px solid $primary-color;
+  ul {
+    li:hover > a > span {
+      border-bottom: 2px solid $primary-color;
+    }
   }
+}
+
+section.slide-section#about {
+  background: #fff;
+  color: #333;
 }
 
 section.slide-section:nth-of-type(odd) {
@@ -141,7 +195,8 @@ section.slide-section:nth-of-type(odd) {
 
 section.slide-section {
   background: $section-slide-background;
-  padding: 50px;
+  padding: $topbar-height;
+  //padding: em-calc(50);
 
   @include grid-row;
 
@@ -157,9 +212,9 @@ section.slide-section {
     }
   }
 
-  div {
+  > div {
     @include grid-column(12);
-    padding: 0 0 120px 0;
+    padding: 0 0 em-calc(120) 0;
   }
 }
 
@@ -167,10 +222,60 @@ section.slide-section.full {
   max-width: 100%;
 }
 
+section.slide-section.active {
+  //min-height: 100%;
+}
+
+@mixin icon($name) {
+  &:before {
+    //padding-right: em-calc(50);
+    @extend .#{$fa-css-prefix};
+    @extend .#{$fa-css-prefix}-fw;
+    @extend .#{$fa-css-prefix}-#{$name}:before;
+    vertical-align: middle;
+    font-size: 2em;
+  }
+}
+
+.contact-info {
+  @include grid-row;
+  max-width: 100%;
+
+  > section {
+    @include grid-column(12);
+
+    padding-left: 0;
+    padding-right: 0;
+    font-size: em-calc(13);
+    margin: em-calc(10) 0;
+    text-transform: uppercase;
+
+    .phone {
+      @include icon(phone);
+    }
+
+    .email {
+      @include icon(envelope-o);
+    }
+
+    .address {
+      @include icon(map-marker);
+    }
+
+    span {
+      display: inline-block;
+      padding-left: em-calc(10);
+      vertical-align: middle;
+    }
+  }
+}
+
 footer {
   background: $footer-background;
   padding: 20px 0;
   text-align: center;
+  color: #fff;
+  font-size: 1.5em;
 
   ul {
     margin: 0;
@@ -178,16 +283,16 @@ footer {
     li {
       display: inline-block;
       list-style: none outside none;
+    }
+  }
 
-      a {
-        color: #fff;
-        font-size: 1.5em;
-        margin: 0 5px;
+  a {
+    color: #fff;
+    margin: 0 5px;
+    font-size: 1.5em;
 
-        &:hover {
-          color: #000;
-        }
-      }
+    &:hover {
+      color: #000;
     }
   }
 }
@@ -264,16 +369,16 @@ footer {
   backface-visibility: hidden;
 }
 .sbtn-fb span {
-  background: url('../images/icon-social-fb.png') no-repeat center center;
+  //background: url() no-repeat center center;
 }
 .sbtn-twitter span {
-  background: url('../images/icon-social-twitter.png') no-repeat center center;
+  //background: url() no-repeat center center;
 }
 .sbtn-instagram span {
-  background: url('../images/icon-social-instagram.png') no-repeat center center;
+  //background: url() no-repeat center center;
 }
 .sbtn-houzz span {
-  background: url('../images/icon-social-houzz.png') no-repeat center center;
+  //background: url() no-repeat center center;
 }
 .sbtn-fb {
   /*background: #00000;*/
@@ -362,25 +467,45 @@ footer {
   z-index: -1;
 }
 
-.entry {
-  background-position: center center;
-  height: 500px;
+
+
+
+.headshot {
+  background-image: url('/assets/images/headshot.png');
   background-size: cover;
-  position: relative;
-  width: 100%;
-  height: 100%; // had screen media query
+  display: block;
+  //float: left;
+  width: 150px;
+  height: 225px;
 
-  @media #{$small-only} {
-    height: $topbar-height;  // + 5
-    //background: $secondary-color;
-  }
+  //margin: 0 10px 10px 0;
+  border: 3px solid white;
+
+  // TODO: mixin
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+
+  float: left;
+  margin-right: 1.25em;
+  margin-bottom: 1.25em;
 }
 
-body.f-topbar-fixed .entry {
-  height: 0;
-  display: none;
+.read-more {
+  text-align: center;
 }
 
-section.slide-section:first-of-type {
-  //margin-top: 400px;
+// TODO: rewrite in sass
+.img-circular{
+  width: 200px;
+  height: 200px;
+  background-image: url('/assets/images/headshot.png');
+  background-size: cover;
+  display: block;
+
+  // TODO: use mixin
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  //@include border-radius(100px);
 }

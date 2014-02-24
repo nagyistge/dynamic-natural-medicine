@@ -37,7 +37,11 @@ module.exports = function(grunt) {
       compile: {
         options: {
           client: false,
-          pretty: true
+          data: function(dest, src) {
+            // Return an object of data to pass to templates
+            return require('./locals');
+          }
+          // grunt.file.readJSON("data.json")
         },
         files: [ {
           cwd: "views",

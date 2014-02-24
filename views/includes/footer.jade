@@ -1,15 +1,26 @@
 footer
-  .large-12.small-centered.columns
-    ul
-      li
-        a(href='//www.facebook.com/DynamicNaturalMedicine', target='_blank')
-          i.fa.fa-twitter
-      li
-        a(href='//www.facebook.com/DynamicNaturalMedicine', target='_blank')
-          i.fa.fa-facebook
-      li
-        a(href='//www.facebook.com/DynamicNaturalMedicine', target='_blank')
-          i.fa.fa-google-plus
-      li
-        a(href='//www.facebook.com/DynamicNaturalMedicine', target='_blank')
-          i.fa.fa-instagram
+  .row
+    .large-12.small-centered.columns
+      ul
+        li
+          a(href='//www.facebook.com/DynamicNaturalMedicine', target='_blank')
+            i.fa.fa-facebook
+        li
+          a(href='//www.linkedin.com/company/3593126', target='_blank')
+            i.fa.fa-linkedin
+        li
+          a(href='//plus.google.com/+DynamicNaturalMedicine', target='_blank')
+            i.fa.fa-google-plus
+        li
+          // TODO: pass as parameters into the page...
+          - var destination = encodeURIComponent(info.address.oneLineAddress);
+          a(href='http://maps.apple.com/?daddr='+destination+',+CA&saddr=')
+            i.fa.fa-map-marker
+  //.row
+    .large-12.columns
+      a(href='tel:+'+info.phone)
+        i.fa.fa-phone
+        = info.phoneFormatted
+  //.row
+    .large-12.columns
+      .address= info.address

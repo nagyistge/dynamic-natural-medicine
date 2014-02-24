@@ -215,8 +215,7 @@ dnm.trackOutboundLink = function() {
 
 $(function()
 {
-  //$(document).foundation({ "magellan-expedition": { destination_threshold: 85 } });
-  $(document).foundation({ "magellan-expedition": { destination_threshold: 100 } });
+  $(document).foundation({ "magellan-expedition": { destination_threshold: 85 } });
 
   //new dnm.preload();
   //new dnm.navigation();
@@ -225,38 +224,80 @@ $(function()
   //new dnm.animations();
   //new dnm.retinaDetect();
 
-    function checkIfExternalLink(href) {
-      return href.charAt(0) != '.' && href.charAt(0) != '#' && (href.charAt(0) != '/' || (href.indexOf("//") == 0 ));
+  // TODO: move into functions on object
+
+  $("#extend-intro").on("click.dnm.more", function() {
+    $("#extended-intro").show();
+    $(this).hide(); // TODO: toggle, Read Less
+    // TODO: google analytics
+  });
+
+
+  function checkIfExternalLink(href) {
+    return href.charAt(0) != '.' && href.charAt(0) != '#' && (href.charAt(0) != '/' || (href.indexOf("//") == 0 ));
+  }
+
+  // TODO: setup testing...
+  console.log(checkIfExternalLink("/about"));
+  console.log(checkIfExternalLink("./doug"));
+  console.log(checkIfExternalLink("#about"));
+  console.log(checkIfExternalLink("//"));
+  console.log(checkIfExternalLink("http://www"));
+  console.log(checkIfExternalLink("https://www"));
+
+  $('a:not([href*="' + document.domain + '"])').mousedown(function(event){
+    // Just in case, be safe and don't do anything
+    if (typeof ga == 'undefined') {
+      return;
     }
 
-    // TODO: setup testing...
-    console.log(checkIfExternalLink("/about"));
-    console.log(checkIfExternalLink("./doug"));
-    console.log(checkIfExternalLink("#about"));
-    console.log(checkIfExternalLink("//"));
-    console.log(checkIfExternalLink("http://www"));
-    console.log(checkIfExternalLink("https://www"));
+    var link = $(this);
+    var href = link.attr('href');
+    if (checkIfExternalLink(href)) {
+      var noProtocol = href.replace(/http[s]?:\/\//, '');
 
-    $('a:not([href*="' + document.domain + '"])').mousedown(function(event){
-      // Just in case, be safe and don't do anything
-      if (typeof ga == 'undefined') {
-        return;
-      }
+      // Track the event
+      //_gat._getTrackerByName()._trackEvent('Outbound Links', noProtocol);
+      ga('send', 'event', 'outbound', 'click', noProtocol, {
+        'hitCallback': function() {
+          //console.log("tracked external link click");
+        }
+      });
+    }
+  });
 
-      var link = $(this);
-      var href = link.attr('href');
-      if (checkIfExternalLink(href)) {
-        var noProtocol = href.replace(/http[s]?:\/\//, '');
+  var navigation_scroll_speed = 600;
+  // Animate internal links
+  //
+  $('a[href^="#"]:not(.mobile-menu)').on('click',function (e) {
+    e.preventDefault();
 
-        // Track the event
-        //_gat._getTrackerByName()._trackEvent('Outbound Links', noProtocol);
-        ga('send', 'event', 'outbound', 'click', noProtocol, {
-          'hitCallback': function() {
-            //console.log("tracked external link click");
-          }
-        });
-      }
-    });
 
+
+    var target = this.hash,
+      $target = $(target);
+
+    console.log(":hh", $target.css('padding-top'));
+      var target_padding_top = parseInt( $target.css('padding-top')||0, 10);
+
+    //if ($target.parent().hasClass(".toggle-topbar")) {
+    //  return;
+    //}
+
+      $("section.slide-section").removeClass("active");
+      $target.addClass("active");
+
+      console.log("1",target_padding_top);
+      console.log("2",$target.offset().top);
+      console.log("3",$target.css('padding-top'));
+      //target_padding_top += 85;
+      //target_padding_top += 34;
+    $('html, body').stop().animate({
+      'scrollTop': $target.offset().top - target_padding_top
+    //}, parseInt(navigation_scroll_speed, 10), 'easeInOutExpo');
+    //}, parseInt(navigation_scroll_speed, 10), 'easeOutQuart');
+      //TODO: fix jquery ui reference
+    }, parseInt(navigation_scroll_speed, 10), 'swing');
+  });
 
 });

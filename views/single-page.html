@@ -1,136 +1,70 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/assets/favicon.ico">
-    <title>Dynamic Natural Medicine</title>
-    <link rel="stylesheet" href="css/app.css">
-    <script src="bower_components/modernizr/modernizr.js"></script>
-  </head>
-  <body>
-    <div style="background-image: url(/assets/images/main.jpg);background-size: cover;" class="bg-pic"></div>
-    <!--section#header.slide-section(data-magellan-destination='header')
-    header
-    div
-      img(src='http://placehold.it/1600x600&text=Header')
+<!DOCTYPE html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/assets/favicon.ico"><title>Dynamic Natural Medicine</title><link rel="stylesheet" href="css/app.css"><script src="bower_components/modernizr/modernizr.js"></script></head><body><div style="background-image: url(/assets/images/main.jpg);background-size: cover;" class="bg-pic"></div><!--section#header.slide-section(data-magellan-destination='header')header
+div
+  img(src='http://placehold.it/1600x600&text=Header')
+  --><section class="entry"></section><!-- nest under, if want always present--><!-- TODO: custom implementation of topbar--><!-- TODO: small screens switch menu to dropdown--><div class="sticky"><nav data-topbar="data-topbar" class="top-bar"><ul class="title-area"><!-- Title Area--><li class="name"><h1><a href="#">Dynamic</a></h1></li><li class="toggle-topbar menu-icon"><a href="#" class="mobile-menu"><span>menu</span></a></li></ul><section class="top-bar-section"><!-- Right Nav Section--><ul class="right"><li data-magellan-arrival="about"><a href="#about"><span>About</span></a></li><li data-magellan-arrival="new"><a href="#new"><span>New Patients</span></a></li><li data-magellan-arrival="contact"><a href="#contact"><span>Contact</span></a></li><li><!-- TODO: do with jquery, not onclick event--><a href="//charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m" target="_blank"><span>Patient Portal&nbsp;<i class="fa fa-external-link"></i></span></a><!-- TODO: hookup google analytics event to track users clicking on patient portal link--><!-- https://support.google.com/analytics/answer/1136920?hl=en&ref_topic=1136919--><!--$('#button').on('click', function() {--><!--  ga('send', 'event', 'button', 'click', 'nav-buttons');--><!--});--><!--a(href='https://charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m', target='_blank', style=' text-decoration:none;background-color: #5BB75B; background: #62c462; /* Old browsers */ /* IE9 SVG, needs conditional override of "filter" to "none" */ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYyYzQ2MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1MWEzNTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, #62c462 0%, #51a351 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#62c462), color-stop(100%,#51a351)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #62c462 0%,#51a351 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #62c462 0%,#51a351 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #62c462 0%,#51a351 100%); /* IE10+ */ background: linear-gradient(to bottom, #62c462 0%,#51a351 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#62c462", endColorstr="#51a351",GradientType=0 ); /* IE6-8 */ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); color: #FFFFFF; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); font-size:11px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; padding: 5px 6px; border-radius: 4px 4px 4px 4px; border:#448944 solid 1px; cursor:pointer') Patient Portal--><!-- TODO: hookup charm patient portal link--><!-- https://charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m--><!--div(style='float:left; margin:20px')a.btn.btn-small.btn-success.pull-right(href='https://charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m', target='_blank', style=' text-decoration:none;background-color: #5BB75B; background: #62c462; /* Old browsers */ /* IE9 SVG, needs conditional override of "filter" to "none" */ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYyYzQ2MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1MWEzNTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, #62c462 0%, #51a351 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#62c462), color-stop(100%,#51a351)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #62c462 0%,#51a351 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #62c462 0%,#51a351 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #62c462 0%,#51a351 100%); /* IE10+ */ background: linear-gradient(to bottom, #62c462 0%,#51a351 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#62c462", endColorstr="#51a351",GradientType=0 ); /* IE6-8 */ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); color: #FFFFFF; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); font-size:11px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; padding: 5px 6px; border-radius: 4px 4px 4px 4px; border:#448944 solid 1px; cursor:pointer') Patient Portal--><!-- TODO: hookup online scheduling.--><!--<div data-magellan-expedition="fixed">
+    <dl class="sub-nav">
+        <dd data-magellan-arrival="build"><a href="#build">Build with HTML</a></dd>
+        <dd data-magellan-arrival="js"><a href="#js">Arrival 2</a></dd>
+    </dl>
+</div>--></li></ul></section></nav></div><section id="about" data-magellan-destination="about" class="slide-section full"><header><h1>HI, NICE TO MEET YOU!</h1></header><div><div class="small-12 panel columns"><div class="headshot"></div><div class="text"><p>Dr. Jennifer Read is one of few physicians that are trained to use a combination of
+conventional, naturopathic, and Eastern philosophies. She uses her unique training
+to create a personalized treatment plan for each of her patients. She challenges
+patients to place their healthcare into their own hands, and ensures that each
+person understands the “why” behind each recommendation. Her goal is to promote
+confidence while guiding patients and their families toward optimal health.</p><div id="extended-intro" class="hide"><p>Dr. Read was born in Cambodia, where traditional natural medicine plays a pivotal
+role in daily living. While raised in the Pacific Northwest, naturopathic medical
+school was a fitting step for Dr. Read, as it allowed her to embrace her Cambodian
+roots. She earned a Bachelor of Science in psychology at Ithaca College in Ithaca,
+New York, and went on to work at Dana Farber, a top rated cancer institute in
+Boston. After spending several years in Boston, she returned to Seattle to attend
+Bastyr University.</p><p>While completing her doctorate in Naturopathic Medicine and Masters of Science in
+acupuncture, Dr. Read discovered a love for treating children, women, and couples
+wishing to conceive. Based on these interests, she sought out additional training in
+pediatrics, women’s health, and fertility. As a holistic practitioner and mother, she
+believes in starting each life off on the right foot. This involves optimizing the health
+of parents before conception and treating babies using a holistic approach beginning
+at birth. Dr. Read considers laughter a cornerstone to health, and incorporates
+humor and laughter into her practice and into her relationships with patients.</p><p>When not seeing patients, Dr. Read enjoys hiking, traveling, cooking, watching
+movies, and spending time with her husband, daughter, and two dogs. She is
+a member of the American Association of Naturopathic Physicians, Pediatric
+Association of Naturopathic Physicians, and the Washington Association of
+Naturopathic Physicians. She is currently accepting new patients and invites you to
+come explore a healthier, happier life for yourself and your family.</p></div></div><div class="read-more"><button id="extend-intro">Read More</button></div></div></div></section><section id="new" data-magellan-destination="new" class="slide-section full"><header><h1>New Patients</h1></header><div><img src="http://placehold.it/1600x600&amp;text=NewPatients"></div></section><section id="contact" data-magellan-destination="contact" class="slide-section full"><header><h1>Contact us</h1></header><div><img src="http://placehold.it/1600x600&amp;text=Contact"><!--<form data-abide>
+  <div class="name-field">
+    <label>Your name <small>required</small>
+      <input type="text" required pattern="[a-zA-Z]+">
+    </label>
+    <small class="error">Name is required and must be a string.</small>
+  </div>
+  <div class="email-field">
+    <label>Email <small>required</small>
+      <input type="email" required>
+    </label>
+    <small class="error">An email address is required.</small>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+--><form id="contact" action="/contact" data-abide><div class="name-field"><label>Your name<input type="text" required pattern="[a-zA-Z]+"></label><small class="error">Name is required</small></div></form><form id="contactus" action="/contact" method="post" data-abide><fieldset><p><label for="name">Name:</label><br><input name="name" type="text" value="" id="name"></p><p><label for="email">Email:</label><br><input name="email" type="text" value="" id="email"></p><p><label for="message">Message:</label><br><textarea name="message" cols="40" rows="10" id="message"></textarea></p><p><input name="submit" type="submit" value="Send" id="submit"></p></fieldset></form><div class="contact-info"><section><div class="email"><!--i.icon.fa.fa-envelope-o--><span>info@dynamicnaturalmedicine.com</span></div></section><section><div class="phone"><!--i.icon-.fa.fa-phone--><span>(206) 518-8938</span></div></section><section><div class="address"><!--i.icon.fa.fa-map-marker--><span>3216 NE 45th PL | Suite 212<br>Seattle, WA, 98105</span></div></section></div></div></section><section><div class="social-row"><div class="grid_6 social-card medium-6 small-12 columns"><a href="//www.healthwavehq.com/welcome/jread" target="_blank" class="sbtn-container"><div data-content="Purchase products through our Health Wave Virtual dispensary" class="sbtn sbtn-fb"><span><img src="http://assets.healthwave.co/buttons/4.jpg" alt="Purchase products through our Health Wave virtual dispensary."></span></div></a></div><div class="grid_6 social-card omega medium-6 small-12 columns"><a href="//charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m" target="_blank" class="sbtn-container"><div data-content="Click to Login" class="sbtn sbtn-twitter"><span>Patient Portal</span></div></a></div></div><!--.social-row.grid_6.social-card.medium-6.small-12.columns
+  a.sbtn-container(href='//www.facebook.com/DynamicNaturalMedicine', target='_blank')
+    .sbtn.sbtn-instagram(data-content='Follow Us')
+      span: i.fa.fa-google-plus
+.grid_6.social-card.omega.medium-6.small-12.columns
+  a.sbtn-container(href='//www.facebook.com/DynamicNaturalMedicine', target='_blank')
+    .sbtn.sbtn-houzz(data-content='Full Portfolio')
+      span: i.fa.fa-google-plus
       
-    -->
-    <section class="entry"></section>
-    <!-- nest under, if want always present-->
-    <!--.top-bar-line
-    // Navigation
-    // <div data-magellan-expedition="fixed" class="fixed">
-    -->
-    <!--.fixed-->
-    <div class="sticky">
-      <!-- TODO: start with menu at bottom-->
-      <nav data-topbar="data-topbar" class="top-bar">
-        <ul class="title-area">
-          <!-- Title Area-->
-          <li class="name">
-            <h1><a href="#">Dynamic</a></h1>
-          </li>
-          <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
-        </ul>
-        <section class="top-bar-section">
-          <!-- Right Nav Section-->
-          <ul class="right">
-            <li data-magellan-arrival="about"><a href="#about"><span>About</span></a></li>
-            <li data-magellan-arrival="new"><a href="#new"><span>New Patients</span></a></li>
-            <li data-magellan-arrival="contact"><a href="#contact"><span>Contact</span></a></li>
-            <li>
-              <!-- TODO: do with jquery, not onclick event--><a href="//charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m" target="_blank">
-                <!--a(href="//charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m", onclick=”dnm.trackOutboundLink(this); return false;")-->
-                <!--a(onclick="dnm.trackOutboundLink(); return false;")--><span>Patient Portal&nbsp;<i class="fa fa-external-link"></i></span></a>
-              <!-- TODO: hookup google analytics event to track users clicking on patient portal link-->
-              <!-- https://support.google.com/analytics/answer/1136920?hl=en&ref_topic=1136919-->
-              <!--$('#button').on('click', function() {-->
-              <!--  ga('send', 'event', 'button', 'click', 'nav-buttons');-->
-              <!--});-->
-              <!--a(href='https://charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m', target='_blank', style=' text-decoration:none;background-color: #5BB75B; background: #62c462; /* Old browsers */ /* IE9 SVG, needs conditional override of "filter" to "none" */ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYyYzQ2MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1MWEzNTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, #62c462 0%, #51a351 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#62c462), color-stop(100%,#51a351)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #62c462 0%,#51a351 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #62c462 0%,#51a351 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #62c462 0%,#51a351 100%); /* IE10+ */ background: linear-gradient(to bottom, #62c462 0%,#51a351 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#62c462", endColorstr="#51a351",GradientType=0 ); /* IE6-8 */ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); color: #FFFFFF; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); font-size:11px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; padding: 5px 6px; border-radius: 4px 4px 4px 4px; border:#448944 solid 1px; cursor:pointer') Patient Portal-->
-              <!-- TODO: hookup charm patient portal link-->
-              <!-- https://charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m-->
-              <!--div(style='float:left; margin:20px')a.btn.btn-small.btn-success.pull-right(href='https://charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m', target='_blank', style=' text-decoration:none;background-color: #5BB75B; background: #62c462; /* Old browsers */ /* IE9 SVG, needs conditional override of "filter" to "none" */ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYyYzQ2MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1MWEzNTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, #62c462 0%, #51a351 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#62c462), color-stop(100%,#51a351)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #62c462 0%,#51a351 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #62c462 0%,#51a351 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #62c462 0%,#51a351 100%); /* IE10+ */ background: linear-gradient(to bottom, #62c462 0%,#51a351 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#62c462", endColorstr="#51a351",GradientType=0 ); /* IE6-8 */ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); color: #FFFFFF; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); font-size:11px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; padding: 5px 6px; border-radius: 4px 4px 4px 4px; border:#448944 solid 1px; cursor:pointer') Patient Portal
-              -->
-            </li>
-            <!-- TODO: hookup online scheduling.-->
-            <!--
-            <div data-magellan-expedition="fixed">
-                <dl class="sub-nav">
-                    <dd data-magellan-arrival="build"><a href="#build">Build with HTML</a></dd>
-                    <dd data-magellan-arrival="js"><a href="#js">Arrival 2</a></dd>
-                </dl>
-            </div>
-            -->
-            <!-- End Top Bar-->
-          </ul>
-        </section>
-      </nav>
-      <!-- Header-->
-      <!--
-      <div class="row">
-          <div class="large-12 columns">
-              <img src="http://placehold.it/1600x600&text=Header"><br><br>
-          </div>
-      </div>
-      -->
-      <!-- End Header-->
-    </div>
-    <section id="about" data-magellan-destination="about" class="slide-section full">
-      <header>
-        <h1>HI, NICE TO MEET YOU!</h1>
-      </header>
-      <div><img src="http://placehold.it/1600x600&amp;text=About"></div>
-    </section>
-    <section id="new" data-magellan-destination="new" class="slide-section full">
-      <header>
-        <h1>New Patients</h1>
-      </header>
-      <div><img src="http://placehold.it/1600x600&amp;text=NewPatients"></div>
-    </section>
-    <section id="contact" data-magellan-destination="contact" class="slide-section full">
-      <header>
-        <h1>Contact us</h1>
-      </header>
-      <div><img src="http://placehold.it/1600x600&amp;text=Contact"></div>
-    </section>
-    <section>
-      <div class="social-row">
-        <div class="grid_6 social-card medium-6 small-12 columns"><a href="//www.facebook.com/DynamicNaturalMedicine" target="_blank" class="sbtn-container">
-            <div data-content="Like Us" class="sbtn sbtn-fb"><span><i class="fa fa-google-plus"></i></span></div></a></div>
-        <div class="grid_6 social-card omega medium-6 small-12 columns"><a href="//www.facebook.com/DynamicNaturalMedicine" target="_blank" class="sbtn-container">
-            <div data-content="Follow Us" class="sbtn sbtn-twitter"><span><i class="fa fa-google-plus"></i></span></div></a></div>
-      </div>
-      <div class="social-row">
-        <div class="grid_6 social-card medium-6 small-12 columns"><a href="//www.facebook.com/DynamicNaturalMedicine" target="_blank" class="sbtn-container">
-            <div data-content="Follow Us" class="sbtn sbtn-instagram"><span><i class="fa fa-google-plus"></i></span></div></a></div>
-        <div class="grid_6 social-card omega medium-6 small-12 columns"><a href="//www.facebook.com/DynamicNaturalMedicine" target="_blank" class="sbtn-container">
-            <div data-content="Full Portfolio" class="sbtn sbtn-houzz"><span><i class="fa fa-google-plus"></i></span></div></a></div>
-      </div>
-    </section>
-    <!-- TODO: break into smaller jade templates-->
-    <footer>
-      <div class="large-12 small-centered columns">
-        <ul>
-          <li><a href="//www.facebook.com/DynamicNaturalMedicine" target="_blank"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="//www.facebook.com/DynamicNaturalMedicine" target="_blank"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="//www.facebook.com/DynamicNaturalMedicine" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-          <li><a href="//www.facebook.com/DynamicNaturalMedicine" target="_blank"><i class="fa fa-instagram"></i></a></li>
-        </ul>
-      </div>
-    </footer>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        //ga('create', 'UA-47356941-1', 'dynamicnaturalmedicine.com');
-        ga('create', 'UA-47356941-1', {'cookieDomain': 'none'});
-      ga('send', 'pageview');
-    </script>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
-  </body>
-</html>
+        //
+          <a href="https://www.healthwavehq.com/welcome/jread">
+            <img src="http://assets.healthwave.co/buttons/4.jpg" alt="Purchase products through our Health Wave virtual dispensary." border="0">
+          </a>--></section><!-- TODO: break into smaller jade templates--><footer><div class="row"><div class="large-12 small-centered columns"><ul><li><a href="//www.facebook.com/DynamicNaturalMedicine" target="_blank"><i class="fa fa-facebook"></i></a></li><li><a href="//www.linkedin.com/company/3593126" target="_blank"><i class="fa fa-linkedin"></i></a></li><li><a href="//plus.google.com/+DynamicNaturalMedicine" target="_blank"><i class="fa fa-google-plus"></i></a></li><li><!-- TODO: pass as parameters into the page...--><a href="http://maps.apple.com/?daddr=undefined,+CA&amp;saddr="><i class="fa fa-map-marker"></i></a></li></ul></div></div><!--.row.large-12.columns
+  a(href='tel:+'+info.phone)
+    i.fa.fa-phone
+    = info.phoneFormatted--><!--.row.large-12.columns
+  .address= info.address--></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  //ga('create', 'UA-47356941-1', 'dynamicnaturalmedicine.com');
+  ga('create', 'UA-47356941-1', {'cookieDomain': 'none'});
+ga('send', 'pageview');</script><script src="bower_components/jquery/dist/jquery.min.js"></script><!--script(src='bower_components/jquery-ui/ui/minified/jquery.ui.effect.min.js');--><script src="bower_components/foundation/js/foundation.min.js"></script><script src="js/app.js"></script></body></html>

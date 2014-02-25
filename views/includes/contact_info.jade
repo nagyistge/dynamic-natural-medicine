@@ -1,0 +1,15 @@
+.contact-info
+  section
+    .email
+      //i.icon.fa.fa-envelope-o
+      span= info.email
+  section
+    .phone
+      //i.icon-.fa.fa-phone
+      span= info.phoneFormatted
+  section
+    .address
+      //i.icon.fa.fa-map-marker
+      span #{info.address.line1} | #{info.address.line2}
+        br
+        | #{info.address.city}, #{info.address.state}, #{info.address.zip}

@@ -22,7 +22,7 @@ block content
   // nest under, if want always present
   include includes/menu
 
-  section#about.slide-section.full(data-magellan-destination='about')
+  section#about.slide-section.full()
     header
       h1 HI, NICE TO MEET YOU!
     div
@@ -62,38 +62,19 @@ block content
         .read-more
           button#extend-intro Read More
 
-  section#new.slide-section.full(data-magellan-destination='new')
+  section#new.slide-section.full()
     header
       h1 New Patients
-    div Forms
-      ul
-        li Form1
-        li Form2
-        li Form3
+    div
+      span Contact us to make an appointment, the necessary forms will be available through your Patient Portal
+      //iframe(width="100%", height="1000", style="overflow:hidden", frameborder=0, src="https://ehr.charmtracker.com/publicCal.sas?method=getCal&id=I70x7R880x6G0x6702c0870uB0S70wc0kk22C8kS5uKx670RSA700kx6700rI67al")
 
-      iframe(width="100%", height="1000", style="overflow:hidden", frameborder=0, src="https://ehr.charmtracker.com/publicCal.sas?method=getCal&id=I70x7R880x6G0x6702c0870uB0S70wc0kk22C8kS5uKx670RSA700kx6700rI67al")
-
-  section#contact.slide-section.full(data-magellan-destination='contact')
+  section#contact.slide-section.full()
     header
       h1 Contact us
     div
-      img(src='http://placehold.it/1600x600&text=Contact')
+      include includes/contact_info
       include includes/contact_form
-      .contact-info
-        section
-          .email
-            //i.icon.fa.fa-envelope-o
-            span= info.email
-        section
-          .phone
-            //i.icon-.fa.fa-phone
-            span= info.phoneFormatted
-        section
-          .address
-            //i.icon.fa.fa-map-marker
-            span #{info.address.line1} | #{info.address.line2}
-              br
-              | #{info.address.city}, #{info.address.state}, #{info.address.zip}
 
   include includes/social
 

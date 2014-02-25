@@ -16,7 +16,8 @@
     "logfmt": "*",
     "grunt-cli": "*",
     "grunt": "*",
-    "bower": "*"
+    "bower": "*",
+    "nodemailer": "*"
   },
   "devDependencies": {
     "node-sass": "*",

@@ -91,6 +91,8 @@ body {
 */
 
 
+// TODO: could the problem be with html magellan stuff still there?
+
 
 
 body.f-topbar-fixed .entry {
@@ -207,13 +209,49 @@ section.slide-section#about {
   color: #333;
 }
 
+section.slide-section#contact {
+  background: #eee;
+
+  input[type=text], textarea {
+    width: 100%;
+    border: 1px solid #dddddd;
+    padding: 1em 0 1em 1.25em;
+    //font-family: "Droid Serif","droid-serif",serif;
+    font-size: em-calc(22px);
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    height: 3em;
+    font-weight: 100;
+  }
+
+  textarea {
+    height: 200px;
+  }
+
+  button[type=submit] {
+    font-size: em-calc(22px);
+    font-family: normal;
+    width: 100%;
+    background: $primary-color;
+    height: 3em;
+    padding: 1em 0 1em 1.25em;
+    font-weight: 100;
+  }
+}
+
 section.slide-section:nth-of-type(odd) {
   background: $secondary-color;
 }
 
 section.slide-section {
   background: $section-slide-background;
-  padding: $topbar-height;
+  padding: $topbar-height 2em;
   min-height: 100%;
   //padding: em-calc(50);
 
@@ -258,13 +296,20 @@ section.slide-section.active {
 
 .contact-info {
   @include grid-row;
-  max-width: 100%;
+  //max-width: 100%;
+  margin-bottom: 1em;
+  border: 1px solid #dddddd;
+  background: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
 
   > section {
     @include grid-column(12);
 
-    padding-left: 0;
-    padding-right: 0;
+    //padding-left: 0;
+    //padding-right: 0;
     font-size: em-calc(13);
     margin: em-calc(10) 0;
     text-transform: uppercase;
@@ -275,10 +320,15 @@ section.slide-section.active {
 
     .email {
       @include icon(envelope-o);
+      white-space:nowrap;
     }
 
     .address {
       @include icon(map-marker);
+
+      span {
+        text-align: right;
+      }
     }
 
     span {

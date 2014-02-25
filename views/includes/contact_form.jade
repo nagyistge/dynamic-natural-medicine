@@ -1,40 +1,22 @@
-//
-  <form data-abide>
-    <div class="name-field">
-      <label>Your name <small>required</small>
-        <input type="text" required pattern="[a-zA-Z]+">
-      </label>
-      <small class="error">Name is required and must be a string.</small>
-    </div>
-    <div class="email-field">
-      <label>Email <small>required</small>
-        <input type="email" required>
-      </label>
-      <small class="error">An email address is required.</small>
-    </div>
-    <button type="submit">Submit</button>
-  </form>
+form#contact-form.row(method="post", action="http://grabber.grabgrab.io/capture/529f4575e7a67937e50001d9")
+  .row
+    .medium-6.columns
+      input(type="text", name="name", placeholder="What should we call you?")
+    .medium-6.columns
+      input(type="text", name="email", placeholder="Where can we email you back?")
+  .row
+    .small-12.columns
+      textarea(name="message", placeholder="How can we help you?")
+      button.g.submit(type="submit") Send It
+// TODO: error handling
+//  .grid.pad
+    .form-plant
+      //p.plant
+        | Your message has been delivered.
+        br
+        | We will get back to you in a jiff.
+      .g-1-2.boxxy.small-6
 
+      .g-1-2.boxxy.small-6
 
-form#contact(action='/contact', data-abide)
-  .name-field
-    label Your name
-      input(type="text", required, pattern="[a-zA-Z]+")
-    small.error Name is required
-
-form#contactus(action='/contact', method='post', data-abide)
-  fieldset
-    p
-      label(for='name') Name:
-      br
-      input(name='name', type='text', value='', id='name')
-    p
-      label(for='email') Email:
-      br
-      input(name='email', type='text', value='', id='email')
-    p
-      label(for='message') Message:
-      br
-      textarea(name='message', cols='40', rows='10', id='message')
-    p
-      input(name='submit', type='submit', value='Send', id='submit')
+      .g-1.boxxy.small-12

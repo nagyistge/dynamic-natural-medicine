@@ -13,6 +13,10 @@ app.get('/doug', function(req, res) {
   res.sendfile("views/foundation.html");
 });
 
+//app.get('/contact', routes.contact);
+//exports.contact = function(req, res){
+//  res.render('contact', { title: 'Raging Flame Laboratory - Contact', page: 'contact' })
+//};
 
 /*
 var transport = nodemailer.createTransport("SMTP", {
@@ -23,6 +27,11 @@ var transport = nodemailer.createTransport("SMTP", {
   }
 });
 */
+
+var nodemailer = require('nodemailer');
+
+
+
 
 app.get('*', function(req, res) {
   res.send("404");

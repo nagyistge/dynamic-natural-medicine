@@ -320,7 +320,8 @@ section.slide-section.active {
 
     .email {
       @include icon(envelope-o);
-      white-space:nowrap;
+      //white-space:nowrap;
+      text-transform: lowercase;
     }
 
     .address {

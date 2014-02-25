@@ -12,9 +12,7 @@ footer
           a(href='//plus.google.com/+DynamicNaturalMedicine', target='_blank')
             i.fa.fa-google-plus
         li
-          // TODO: pass as parameters into the page...
-          - var destination = encodeURIComponent(info.address.oneLineAddress);
-          a(href='http://maps.apple.com/?daddr='+destination+',+CA&saddr=')
+          a(href='http://maps.apple.com/?daddr='+encodeURIComponent(info.address.oneline)+',+CA&saddr=')
             i.fa.fa-map-marker
   //.row
     .large-12.columns

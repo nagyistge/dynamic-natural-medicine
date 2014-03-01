@@ -1,25 +1,19 @@
 @import "settings";
-@import "foundation";
-
-$fa-font-path: "/bower_components/font-awesome/fonts";
-@import "font-awesome";
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
+//@import "foundation";
 // Or selectively include components
-// @import
+@import
 //   "foundation/components/accordion",
 //   "foundation/components/alert-boxes",
 //   "foundation/components/block-grid",
 //   "foundation/components/breadcrumbs",
 //   "foundation/components/button-groups",
-//   "foundation/components/buttons",
-//   "foundation/components/clearing",
+   "foundation/components/buttons",
+   "foundation/components/clearing",
 //   "foundation/components/dropdown",
 //   "foundation/components/dropdown-buttons",
 //   "foundation/components/flex-video",
-//   "foundation/components/forms",
-//   "foundation/components/grid",
+   "foundation/components/forms",
+   "foundation/components/grid",
 //   "foundation/components/inline-lists",
 //   "foundation/components/joyride",
 //   "foundation/components/keystrokes",
@@ -27,7 +21,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 //   "foundation/components/magellan",
 //   "foundation/components/orbit",
 //   "foundation/components/pagination",
-//   "foundation/components/panels",
+   "foundation/components/panels",
 //   "foundation/components/pricing-tables",
 //   "foundation/components/progress-bars",
 //   "foundation/components/reveal",
@@ -39,10 +33,19 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 //   "foundation/components/tabs",
 //   "foundation/components/thumbs",
 //   "foundation/components/tooltips",
-//   "foundation/components/top-bar",
-//   "foundation/components/type",
-//   "foundation/components/offcanvas",
-//   "foundation/components/visibility";
+   "foundation/components/top-bar",
+   "foundation/components/type",
+   "foundation/components/offcanvas",
+   "foundation/components/visibility";
+
+$fa-font-path: "/bower_components/font-awesome/fonts";
+@import "font-awesome";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+@import "mixins";
+
 
 $primary-color: #2D81C1;
 $secondary-color: #C12D81;
@@ -53,7 +56,8 @@ $section-slide-background: $primary-color;
 
 body {
   //font-family: 'proxima-nova', sans-serif;
-  font-family: 'Open Sans', sans-serif;
+  //font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   //text-shadow: 0 -1px #eee, 1px 0 #eee, 0 1px #eee, -1px 0 #eee;
 }
 
@@ -93,6 +97,15 @@ body {
 
 // TODO: could the problem be with html magellan stuff still there?
 
+.top-bar {
+  .name {
+    h1 {
+      a {
+        width: 25%;
+      }
+    }
+  }
+}
 
 
 body.f-topbar-fixed .entry {
@@ -201,16 +214,182 @@ nav.top-bar {
     li:hover > a > span {
       border-bottom: 2px solid $primary-color;
     }
+
+
+    //#patientportal {
+      //a {
+        //span {
+        //  display: inline-block;
+        //  //line-height: 0;
+        //  vertical-align: middle;
+        //}
+
+        /*display: table;
+        height: $topbar-height;
+
+        span {
+          line-height: normal;
+          display: table-cell;
+          vertical-align: middle;
+
+          div {
+
+          }
+        }*/
+      //}
+    //}
   }
 }
 
 section.slide-section#about {
   //background: #fff;
   color: #333;
+
+  // TODO: figure out css selector for this so don't have to rely on id
+  &:before {
+    content: " ";
+    display: none;
+  }
+}
+
+section.slide-section#services {
+  //font-family: proxima-nova-1, Tahoma, "Helvetica Neue", Helvetica, sans-serif;
+  //font-family: Droid Sans Mono;
+  background: #fff;
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  hr {
+    width: 100px;
+    margin: 20px auto 20px auto;
+
+  }
+
+  .service-centered {
+    @include grid-column(12,$collapse:true,$center:true);
+
+    text-align: center;
+
+    h3 {
+      font-size: 1.5em;
+      font-weight: 400;
+      color: #a2a3a3;
+
+      &:before {
+        content: " ";
+        border-top: 3px solid red;
+        width: 50px;
+        position: absolute;
+      }
+    }
+
+    p {
+      color: #737272;
+    }
+  }
+
+  .service {
+    @include grid-column(6);
+    @include panel();
+
+    &:nth-of-type(odd) {
+      background: #eee;
+    }
+    &:nth-of-type(even) {
+      background: #473;
+    }
+
+    @media #{$small-only} {
+      @include grid-column(12);
+    }
+  }
+
+  .discounts {
+    margin-bottom: em-calc(80);
+  }
+
+  .discount {
+    @include grid-column(12);//,$collapse:true);
+
+    margin-top: 1em;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  .discount-circle {
+    height: 120px;
+    width: 120px;
+    line-height: 120px;
+    border: 4px solid #bbb;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: -60px;
+    background: #2D81C1;
+    color: white;
+    text-align: center;
+
+    div {
+      font-size: 40px;
+      margin-top: -10px;
+    }
+
+    //&:after {
+    //  content: "50%";
+      /* data attribute */
+    //  top: 0;
+    //  color: red;
+    //}
+  }
+
+  .box {
+    //min-height: 200px;
+    border: 3px solid #bbb;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.2em;
+    text-align: center;
+    border-radius: 0px;
+    color: #aaa;
+    font-weight: 100;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  $fee-height: em-calc(60px);
+  .fee-circle {
+    &:before {
+      content: "";
+      font-family: FontAwesome;
+    }
+
+    height: $fee-height;
+    width: $fee-height;
+    line-height: $fee-height;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    display: inline-block;
+    background: red;
+    margin: 10px;
+  }
+
 }
 
 section.slide-section#contact {
   background: #eee;
+
+  header {
+    h1 {
+      text-align: left;
+    }
+  }
 
   input[type=text], textarea {
     width: 100%;
@@ -246,18 +425,34 @@ section.slide-section#contact {
 }
 
 section.slide-section:nth-of-type(odd) {
-  background: $secondary-color;
+  //background: $secondary-color;
+  background: #eee;
 }
 
 section.slide-section {
-  background: $section-slide-background;
+  //background: $section-slide-background;
+  background: white;
   padding: $topbar-height 2em;
   min-height: 100%;
   //padding: em-calc(50);
+  position: relative;
 
   @include grid-row;
 
-  //padding: 120px 0;
+  //@include icon(circle);
+  /*&:before {
+    @extend .#{$fa-css-prefix};
+    //@extend .#{$fa-css-prefix}-fw;
+    //@extend .#{$fa-css-prefix}-circle:before;
+    position: absolute;
+    top: -50px;
+    font-size: 100px;
+    color: $ternary-color;
+    left: 50%;
+    margin-left: -50px;
+    content: "\f111"; // circle
+    //content: "\f04d"; // square
+  }*/
 
   header {
     @include grid-row;
@@ -269,7 +464,7 @@ section.slide-section {
     }
   }
 
-  > div {
+  > .content {
     @include grid-column(12);
     //padding: 0 0 em-calc(120) 0;
   }
@@ -283,16 +478,7 @@ section.slide-section.active {
   //min-height: 100%;
 }
 
-@mixin icon($name) {
-  &:before {
-    //padding-right: em-calc(50);
-    @extend .#{$fa-css-prefix};
-    @extend .#{$fa-css-prefix}-fw;
-    @extend .#{$fa-css-prefix}-#{$name}:before;
-    vertical-align: middle;
-    font-size: 2em;
-  }
-}
+
 
 .contact-info {
   @include grid-row;
@@ -578,4 +764,15 @@ footer {
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   //@include border-radius(100px);
+}
+
+.circle {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  /* width and height can be anything, as long as they're equal */
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 50%;
 }

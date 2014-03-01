@@ -23,13 +23,18 @@
         li(data-magellan-arrival='new')
           a(href='#new')
             span New Patients
+        li(data-magellan-arrival='services')
+          a(href='#services')
+            span Services
         li(data-magellan-arrival='contact')
           a(href='#contact')
             span Contact
-        li
+        li#patientportal
           // TODO: do with jquery, not onclick event
           a(href=info.links.patient.portal, target="_blank")
-            span Patient Portal&nbsp;
+            span
+              | Patient
+              | Portal&nbsp;
               i.fa.fa-external-link
 
 

@@ -1,0 +1,10 @@
+@mixin icon($name) {
+  &:before {
+    //padding-right: em-calc(50);
+    @extend .#{$fa-css-prefix};
+    @extend .#{$fa-css-prefix}-fw;
+    @extend .#{$fa-css-prefix}-#{$name}:before;
+    vertical-align: middle;
+    font-size: 2em;
+  }
+}

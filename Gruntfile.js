@@ -53,6 +53,23 @@ module.exports = function(grunt) {
       }
     },
 
+    uglify: {
+      options: {
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+          '<%= grunt.template.today("yyyy-mm-dd") %> */',
+        compress: {
+          drop_console: true
+        },
+        sourceMap: true,
+        sourceMapName: 'public/js/app.min.js.map'
+      },
+      my_target: {
+        files: {
+          'public/js/app.min.js': ['public/js/app.js']
+        }
+      }
+    },
+
     watch: {
       grunt: { files: ['Gruntfile.js'] },
 
@@ -79,10 +96,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-
-  // TODO: Use jade and compile into html with https://www.npmjs.org/package/grunt-contrib-jade
-
-
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -95,9 +108,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-contrib-jade');
 
-
-
-  grunt.registerTask('build', ['sass','jade']);
+  grunt.registerTask('build', ['sass','jade','uglify']);
   grunt.registerTask('default', ['build','express','watch']);
   grunt.registerTask('heroku', ['build']);
 }

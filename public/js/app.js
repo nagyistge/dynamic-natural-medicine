@@ -51,8 +51,8 @@ dnm.pageMoveAction = function()
   function init()
   {
     $(window).scroll(function(e){
-      parallax();
-      pleaseScroll();
+      //parallax();
+      //pleaseScroll();
     });
 
   }
@@ -101,9 +101,9 @@ dnm.showMoreWork = function()
 
   function init()
   {
-    showWork.hover(showIt);
-    closeWork.hover(normalState);
-    showOnDesktop();
+    //showWork.hover(showIt);
+    //closeWork.hover(normalState);
+    //showOnDesktop();
   }
 
   function showIt()

@@ -7,11 +7,12 @@ append scripts
   script(src='bower_components/jquery/dist/jquery.min.js')
   //script(src='bower_components/jquery-ui/ui/minified/jquery.ui.effect.min.js');
   script(src='bower_components/foundation/js/foundation.min.js')
-  script(src='js/app.js')
+  script(src='js/app.min.js')
 
 block content
   .bg-pic(style="background-image: url(/assets/images/main.jpg);background-size: cover;")
 
+  // TODO: custom
   //section#header.slide-section(data-magellan-destination='header')
     header
     div
@@ -25,54 +26,38 @@ block content
   section#about.slide-section.full()
     header
       h1 HI, NICE TO MEET YOU!
-    div
-      .small-12.panel.columns
-        .headshot
-        .text
-          p Dr. Jennifer Read is one of few physicians that are trained to use a combination of
-            | conventional, naturopathic, and Eastern philosophies. She uses her unique training
-            | to create a personalized treatment plan for each of her patients. She challenges
-            | patients to place their healthcare into their own hands, and ensures that each
-            | person understands the “why” behind each recommendation. Her goal is to promote
-            | confidence while guiding patients and their families toward optimal health.
-          #extended-intro.hide
-            p Dr. Read was born in Cambodia, where traditional natural medicine plays a pivotal
-              | role in daily living. While raised in the Pacific Northwest, naturopathic medical
-              | school was a fitting step for Dr. Read, as it allowed her to embrace her Cambodian
-              | roots. She earned a Bachelor of Science in psychology at Ithaca College in Ithaca,
-              | New York, and went on to work at Dana Farber, a top rated cancer institute in
-              | Boston. After spending several years in Boston, she returned to Seattle to attend
-              | Bastyr University.
-
-            p While completing her doctorate in Naturopathic Medicine and Masters of Science in
-              | acupuncture, Dr. Read discovered a love for treating children, women, and couples
-              | wishing to conceive. Based on these interests, she sought out additional training in
-              | pediatrics, women’s health, and fertility. As a holistic practitioner and mother, she
-              | believes in starting each life off on the right foot. This involves optimizing the health
-              | of parents before conception and treating babies using a holistic approach beginning
-              | at birth. Dr. Read considers laughter a cornerstone to health, and incorporates
-              | humor and laughter into her practice and into her relationships with patients.
-
-            p When not seeing patients, Dr. Read enjoys hiking, traveling, cooking, watching
-              | movies, and spending time with her husband, daughter, and two dogs. She is
-              | a member of the American Association of Naturopathic Physicians, Pediatric
-              | Association of Naturopathic Physicians, and the Washington Association of
-              | Naturopathic Physicians. She is currently accepting new patients and invites you to
-              | come explore a healthier, happier life for yourself and your family.
-        .read-more
-          button#extend-intro Read More
+    .content
+      //.small-12.panel.columns
+      .small-12.columns
+        include includes/bio
 
   section#new.slide-section.full()
     header
       h1 New Patients
-    div
+    .content
       span Contact us to make an appointment, the necessary forms will be available through your Patient Portal
       //iframe(width="100%", height="1000", style="overflow:hidden", frameborder=0, src="https://ehr.charmtracker.com/publicCal.sas?method=getCal&id=I70x7R880x6G0x6702c0870uB0S70wc0kk22C8kS5uKx670RSA700kx6700rI67al")
+
+  section#services.slide-section.full()
+    header
+      h1 Services & Fees
+    .content
+      include includes/services
+      include includes/fees
+      include includes/discounts
+
+      include includes/insurance
+
+  //section#fees.slide-section.full()
+    header
+      h1 Fees
+    .content
+      include includes/fees
 
   section#contact.slide-section.full()
     header
       h1 Contact us
-    div
+    .content
       include includes/contact_info
       include includes/contact_form
 

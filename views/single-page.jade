@@ -10,7 +10,8 @@ append scripts
   script(src='js/app.min.js')
 
 block content
-  .bg-pic(style="background-image: url(/assets/images/main.jpg);background-size: cover;")
+  .bg-pic
+  //.bg-pic(style="background-image: url(/assets/images/main.jpg);background-size: cover;")
 
   // TODO: custom
   //section#header.slide-section(data-magellan-destination='header')
@@ -24,22 +25,22 @@ block content
   include includes/menu
 
   section#about.slide-section.full()
-    header
-      h1 HI, NICE TO MEET YOU!
+    header#about-header
+      h1 Meet Dr. Read
     .content
       //.small-12.panel.columns
       .small-12.columns
         include includes/bio
 
   section#new.slide-section.full()
-    header
+    header#new-header
       h1 New Patients
     .content
       span Contact us to make an appointment, the necessary forms will be available through your Patient Portal
       //iframe(width="100%", height="1000", style="overflow:hidden", frameborder=0, src="https://ehr.charmtracker.com/publicCal.sas?method=getCal&id=I70x7R880x6G0x6702c0870uB0S70wc0kk22C8kS5uKx670RSA700kx6700rI67al")
 
   section#services.slide-section.full()
-    header
+    header#services-header
       h1 Services & Fees
     .content
       include includes/services
@@ -55,7 +56,7 @@ block content
       include includes/fees
 
   section#contact.slide-section.full()
-    header
+    header#contact-header
       h1 Contact us
     .content
       include includes/contact_info

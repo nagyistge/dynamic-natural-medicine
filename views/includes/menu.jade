@@ -4,7 +4,8 @@
 
 
 
-.sticky
+.sticky(data-magellan-expedition="fixed")
+  //.sticky(data-magellan-expedition="fixed")
   nav.top-bar(data-topbar='data-topbar')
     ul.title-area
       // Title Area
@@ -17,17 +18,17 @@
     section.top-bar-section
       // Right Nav Section
       ul.right
-        li(data-magellan-arrival='about')
-          a(href='#about')
+        li(data-magellan-arrival='about-header')
+          a(href='#about-header')
             span About
-        li(data-magellan-arrival='new')
-          a(href='#new')
+        li(data-magellan-arrival='new-header')
+          a(href='#new-header')
             span New Patients
-        li(data-magellan-arrival='services')
-          a(href='#services')
+        li(data-magellan-arrival='services-header')
+          a(href='#services-header')
             span Services
-        li(data-magellan-arrival='contact')
-          a(href='#contact')
+        li(data-magellan-arrival='contact-header')
+          a(href='#contact-header')
             span Contact
         li#patientportal
           // TODO: do with jquery, not onclick event

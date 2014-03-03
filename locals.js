@@ -21,7 +21,7 @@ var locals = {
   meta: {
     title: "Dynamic Natural Medicine",
     description: "",
-    image: "",
+    image: "/assets/images/headshot.png",
     keywords: "",
     twitter: {
 

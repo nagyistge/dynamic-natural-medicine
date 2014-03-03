@@ -27,7 +27,7 @@ var locals = {
 
     },
     facebook: {
-      app_id: "585338738223450",
+      page_id: "585338738223450",
       type: "business.business",
       site_name: "Dynamic Natural Medicine",
       street_address: "",

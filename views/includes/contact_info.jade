@@ -1,15 +1,24 @@
 .contact-info
   section
     .email
-      span: a(href="mailto:" + info.email)= info.email
+      span: a(href="mailto:" + info.email)
+        | <meta itemprop="email" content="info@dynamicnaturalmedicine.com">
+        = info.email
   section
     .phone
-      span: a(href="tel:" + info.phone)= info.phoneFormatted
+      span
+        a(href="tel:" + info.phone)
+          span(itemprop="telephone")= info.phoneFormatted
   section
     .address
-      span: a(href="//maps.google.com/maps?saddr=&daddr=" + encodeURIComponent(info.address.oneline), target="_blank")
-        | #{info.address.line1} | #{info.address.line2}
-        br
-        | #{info.address.city}, #{info.address.state}, #{info.address.zip}
+      span
+        a(href="//maps.google.com/maps?saddr=&daddr=" + encodeURIComponent(info.address.oneline), target="_blank")
+          span(itemprop="streetAddress") #{info.address.line1} | #{info.address.line2}
+          br
+          span(itemprop="addressLocality") #{info.address.city}
+          | ,
+          span(itemprop="addressRegion") #{info.address.state}
+          | ,
+          span(itemprop="postalCode") #{info.address.zip}
+
   // TODO: use geolocation, https://github.com/estebanav/javascript-mobile-desktop-geolocation or bower component
-  // doug: was herfadsfasdf

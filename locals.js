@@ -24,7 +24,7 @@ var locals = {
     image: "http://www.dynamicnaturalmedicine.com/assets/images/headshot.png",
     //keywords: "Dynamic Natural Medicine,Jennifer Read,Naturopath,Acupuncture,ND,LaC,Pediatric,Fertility,Women's Health",
     keywords: "",
-    author: "dreadjr",
+    author: "Dr. Jennifer S Read ND LaC",
     twitter: {
 
     },

@@ -552,7 +552,7 @@ section.slide-section.active {
       }
     }
 
-    span {
+    > div > span {
       display: inline-block;
       padding-left: em-calc(10);
       vertical-align: middle;

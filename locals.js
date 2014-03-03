@@ -36,7 +36,7 @@ var locals = {
       country_name: "US",
       image: ""
     },
-    schema: {
+    googleplus: {
 
     }
   }

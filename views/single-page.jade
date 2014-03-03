@@ -10,26 +10,19 @@ append scripts
   script(src='js/app.min.js')
 
 block content
-  .bg-pic
   //.bg-pic(style="background-image: url(/assets/images/main.jpg);background-size: cover;")
-
-  // TODO: custom
-  //section#header.slide-section(data-magellan-destination='header')
-    header
-    div
-      img(src='http://placehold.it/1600x600&text=Header')
-
   section.entry
 
-  // nest under, if want always present
-  include includes/menu
+  //.fixed
+  .sticky
+    include includes/menu
 
   section#about.slide-section.full()
     header#about-header
-      h1 Meet Dr. Read
+      h1 Meet Dr. Jennifer S. Read
     .content
       //.small-12.panel.columns
-      .small-12.columns
+      .medium-8.small-centered.columns
         include includes/bio
 
   section#new.slide-section.full()
@@ -37,11 +30,23 @@ block content
       h1 New Patients
     .content
       span Contact us to make an appointment, the necessary forms will be available through your Patient Portal
+
+      include includes/natropathic_definition
+      include includes/accupunture_definition
+
       //iframe(width="100%", height="1000", style="overflow:hidden", frameborder=0, src="https://ehr.charmtracker.com/publicCal.sas?method=getCal&id=I70x7R880x6G0x6702c0870uB0S70wc0kk22C8kS5uKx670RSA700kx6700rI67al")
 
   section#services.slide-section.full()
     header#services-header
       h1 Services & Fees
+
+    //ul
+      li
+        a What is Naturopathic Medicine?
+      li
+        a What is Acupuncture?
+      //include includes/natropathic_definition
+      //include includes/accupunture_definition
     .content
       include includes/services
       include includes/fees
@@ -61,6 +66,14 @@ block content
     .content
       include includes/contact_info
       include includes/contact_form
+
+  //section#faq.slide-section.full
+    header#faq-header
+      h1 FAQ
+    include includes/natropathic_definition
+    include includes/accupunture_definition
+    .content
+      include includes/faq
 
   include includes/social
 

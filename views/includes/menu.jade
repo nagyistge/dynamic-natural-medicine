@@ -3,60 +3,63 @@
 
 
 
+  //(data-magellan-expedition="fixed")
+.sticky
+//.sticky(data-magellan-expedition="fixed")
+nav.top-bar(data-topbar='data-topbar')
+  ul.title-area
+    // Title Area
+    li.name
+      h1
+        a(href='#') Dynamic
+    li.toggle-topbar.menu-icon
+      a.mobile-menu(href='#')
+        span menu
+  section.top-bar-section
+    // Right Nav Section
+    ul.right
+      li(data-magellan-arrival='about-header')
+        a(href='#about-header')
+          span About
+      li(data-magellan-arrival='new-header')
+        a(href='#new-header')
+          span New Patients
+      li(data-magellan-arrival='services-header')
+        a(href='#services-header')
+          span Services
+      //li(data-magellan-arrival='faq-header')
+        a(href='#faq-header')
+          span FAQ
+      li(data-magellan-arrival='contact-header')
+        a(href='#contact-header')
+          span Contact
+      li#patientportal
+        // TODO: do with jquery, not onclick event
+        a(href=info.links.patient.portal, target="_blank")
+          span
+            | Patient
+            | Portal&nbsp;
+            i.fa.fa-external-link
 
-.sticky(data-magellan-expedition="fixed")
-  //.sticky(data-magellan-expedition="fixed")
-  nav.top-bar(data-topbar='data-topbar')
-    ul.title-area
-      // Title Area
-      li.name
-        h1
-          a(href='#') Dynamic
-      li.toggle-topbar.menu-icon
-        a.mobile-menu(href='#')
-          span menu
-    section.top-bar-section
-      // Right Nav Section
-      ul.right
-        li(data-magellan-arrival='about-header')
-          a(href='#about-header')
-            span About
-        li(data-magellan-arrival='new-header')
-          a(href='#new-header')
-            span New Patients
-        li(data-magellan-arrival='services-header')
-          a(href='#services-header')
-            span Services
-        li(data-magellan-arrival='contact-header')
-          a(href='#contact-header')
-            span Contact
-        li#patientportal
-          // TODO: do with jquery, not onclick event
-          a(href=info.links.patient.portal, target="_blank")
-            span
-              | Patient
-              | Portal&nbsp;
-              i.fa.fa-external-link
 
 
+        // TODO: hookup google analytics event to track users clicking on patient portal link
+        // https://support.google.com/analytics/answer/1136920?hl=en&ref_topic=1136919
+        //$('#button').on('click', function() {
+        //  ga('send', 'event', 'button', 'click', 'nav-buttons');
+        //});
 
-          // TODO: hookup google analytics event to track users clicking on patient portal link
-          // https://support.google.com/analytics/answer/1136920?hl=en&ref_topic=1136919
-          //$('#button').on('click', function() {
-          //  ga('send', 'event', 'button', 'click', 'nav-buttons');
-          //});
+        //a(href='https://charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m', target='_blank', style=' text-decoration:none;background-color: #5BB75B; background: #62c462; /* Old browsers */ /* IE9 SVG, needs conditional override of "filter" to "none" */ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYyYzQ2MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1MWEzNTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, #62c462 0%, #51a351 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#62c462), color-stop(100%,#51a351)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #62c462 0%,#51a351 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #62c462 0%,#51a351 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #62c462 0%,#51a351 100%); /* IE10+ */ background: linear-gradient(to bottom, #62c462 0%,#51a351 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#62c462", endColorstr="#51a351",GradientType=0 ); /* IE6-8 */ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); color: #FFFFFF; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); font-size:11px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; padding: 5px 6px; border-radius: 4px 4px 4px 4px; border:#448944 solid 1px; cursor:pointer') Patient Portal
 
-          //a(href='https://charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m', target='_blank', style=' text-decoration:none;background-color: #5BB75B; background: #62c462; /* Old browsers */ /* IE9 SVG, needs conditional override of "filter" to "none" */ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYyYzQ2MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1MWEzNTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, #62c462 0%, #51a351 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#62c462), color-stop(100%,#51a351)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #62c462 0%,#51a351 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #62c462 0%,#51a351 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #62c462 0%,#51a351 100%); /* IE10+ */ background: linear-gradient(to bottom, #62c462 0%,#51a351 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#62c462", endColorstr="#51a351",GradientType=0 ); /* IE6-8 */ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); color: #FFFFFF; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); font-size:11px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; padding: 5px 6px; border-radius: 4px 4px 4px 4px; border:#448944 solid 1px; cursor:pointer') Patient Portal
-
-          // TODO: hookup charm patient portal link
-          // https://charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m
-          //div(style='float:left; margin:20px')
-            a.btn.btn-small.btn-success.pull-right(href='https://charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m', target='_blank', style=' text-decoration:none;background-color: #5BB75B; background: #62c462; /* Old browsers */ /* IE9 SVG, needs conditional override of "filter" to "none" */ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYyYzQ2MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1MWEzNTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, #62c462 0%, #51a351 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#62c462), color-stop(100%,#51a351)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #62c462 0%,#51a351 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #62c462 0%,#51a351 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #62c462 0%,#51a351 100%); /* IE10+ */ background: linear-gradient(to bottom, #62c462 0%,#51a351 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#62c462", endColorstr="#51a351",GradientType=0 ); /* IE6-8 */ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); color: #FFFFFF; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); font-size:11px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; padding: 5px 6px; border-radius: 4px 4px 4px 4px; border:#448944 solid 1px; cursor:pointer') Patient Portal
-          // TODO: hookup online scheduling.
-          //
-                      <div data-magellan-expedition="fixed">
-                          <dl class="sub-nav">
-                              <dd data-magellan-arrival="build"><a href="#build">Build with HTML</a></dd>
-                              <dd data-magellan-arrival="js"><a href="#js">Arrival 2</a></dd>
-                          </dl>
-                      </div>
+        // TODO: hookup charm patient portal link
+        // https://charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m
+        //div(style='float:left; margin:20px')
+          a.btn.btn-small.btn-success.pull-right(href='https://charmphr.com/login.sas?FACILITY=G08677zx67020x6702cax771PI703mc0880kx6700kx7875m', target='_blank', style=' text-decoration:none;background-color: #5BB75B; background: #62c462; /* Old browsers */ /* IE9 SVG, needs conditional override of "filter" to "none" */ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYyYzQ2MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1MWEzNTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, #62c462 0%, #51a351 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#62c462), color-stop(100%,#51a351)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #62c462 0%,#51a351 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #62c462 0%,#51a351 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #62c462 0%,#51a351 100%); /* IE10+ */ background: linear-gradient(to bottom, #62c462 0%,#51a351 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#62c462", endColorstr="#51a351",GradientType=0 ); /* IE6-8 */ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); color: #FFFFFF; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); font-size:11px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; padding: 5px 6px; border-radius: 4px 4px 4px 4px; border:#448944 solid 1px; cursor:pointer') Patient Portal
+        // TODO: hookup online scheduling.
+        //
+                    <div data-magellan-expedition="fixed">
+                        <dl class="sub-nav">
+                            <dd data-magellan-arrival="build"><a href="#build">Build with HTML</a></dd>
+                            <dd data-magellan-arrival="js"><a href="#js">Arrival 2</a></dd>
+                        </dl>
+                    </div>

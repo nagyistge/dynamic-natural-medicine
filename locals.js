@@ -21,7 +21,7 @@ var locals = {
   meta: {
     title: "Dynamic Natural Medicine",
     description: "",
-    image: "/assets/images/headshot.png",
+    image: "http://www.dynamicnaturalmedicine.com/assets/images/headshot.png",
     keywords: "",
     twitter: {
 
@@ -33,7 +33,8 @@ var locals = {
       street_address: "",
       locality: "",
       postal_code: "",
-      country_name: "US"
+      country_name: "US",
+      image: ""
     },
     schema: {
 

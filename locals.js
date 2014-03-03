@@ -17,6 +17,27 @@ var locals = {
         dispensary: "//www.healthwavehq.com/welcome/jread"
       }
     }
+  },
+  meta: {
+    title: "Dynamic Natural Medicine",
+    description: "",
+    image: "",
+    keywords: "",
+    twitter: {
+
+    },
+    facebook: {
+      app_id: "585338738223450",
+      type: "business.business",
+      site_name: "Dynamic Natural Medicine",
+      street_address: "",
+      locality: "",
+      postal_code: "",
+      country_name: "US"
+    },
+    schema: {
+
+    }
   }
 };
 

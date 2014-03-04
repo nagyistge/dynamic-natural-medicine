@@ -20,11 +20,11 @@ var locals = {
   },
   meta: {
     title: "Dynamic Natural Medicine",
-    description: "Dr. Jennifer S Read ND LaC, naturopathic doctor and acupuncturist in Seattle, WA, specializes in naturopathic pediatrics, fertility and women's health",
+    description: "Dr. Jennifer S Read ND LAc, naturopathic doctor and acupuncturist in Seattle, WA, specializes in naturopathic pediatrics, fertility and women's health",
     image: "http://www.dynamicnaturalmedicine.com/assets/images/headshot.png",
-    //keywords: "Dynamic Natural Medicine,Jennifer Read,Naturopath,Acupuncture,ND,LaC,Pediatric,Fertility,Women's Health",
+    //keywords: "Dynamic Natural Medicine,Jennifer Read,Naturopath,Acupuncture,ND,LAc,Pediatric,Fertility,Women's Health",
     keywords: "",
-    author: "Dr. Jennifer S Read ND LaC",
+    author: "Dr. Jennifer S Read ND LAc",
     twitter: {
 
     },

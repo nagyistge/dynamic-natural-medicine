@@ -18,15 +18,14 @@ block content
   .sticky
     include includes/menu
 
-  section#about.slide-section.full()
+  section#about.slide-section.full
     header#about-header
       h1: span(itemprop="name") Meet Dr. Jennifer S. Read
     .content
-      //.small-12.panel.columns
       .medium-8.small-centered.columns
         include includes/bio
 
-  section#new.slide-section.full()
+  section#new.slide-section.full
     header#new-header
       h1 New Patients
     .content
@@ -35,19 +34,9 @@ block content
       include includes/natropathic_definition
       include includes/accupunture_definition
 
-      //iframe(width="100%", height="1000", style="overflow:hidden", frameborder=0, src="https://ehr.charmtracker.com/publicCal.sas?method=getCal&id=I70x7R880x6G0x6702c0870uB0S70wc0kk22C8kS5uKx670RSA700kx6700rI67al")
-
-  section#services.slide-section.full()
+  section#services.slide-section.full
     header#services-header
       h1 Services & Fees
-
-    //ul
-      li
-        a What is Naturopathic Medicine?
-      li
-        a What is Acupuncture?
-      //include includes/natropathic_definition
-      //include includes/accupunture_definition
     .content
       include includes/services
       include includes/fees
@@ -55,28 +44,12 @@ block content
 
       include includes/insurance
 
-  //section#fees.slide-section.full()
-    header
-      h1 Fees
-    .content
-      include includes/fees
-
-  section#contact.slide-section.full()
+  section#contact.slide-section.full
     header#contact-header
       h1 Contact us
     .content
       include includes/contact_info
       include includes/contact_form
 
-  //section#faq.slide-section.full
-    header#faq-header
-      h1 FAQ
-    include includes/natropathic_definition
-    include includes/accupunture_definition
-    .content
-      include includes/faq
-
   include includes/social
-
-  // TODO: break into smaller jade templates
   include includes/footer

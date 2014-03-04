@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 
     sass: {
       options: {
-        includePaths: ['bower_components/foundation/scss','bower_components/font-awesome/scss']
+        includePaths: ['bower_components/foundation/scss','bower_components/font-awesome/scss',require('node-bourbon').includePaths]
       },
       dist: {
         options: {

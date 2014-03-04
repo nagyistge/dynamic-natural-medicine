@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "node-sass": "*",
+    "node-bourbon": "*",
     "grunt": "*",
     "grunt-sass": "*",
     "grunt-contrib-cssmin": "*",

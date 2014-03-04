@@ -7,10 +7,8 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use(express.static(__dirname + "/public"));
 app.use(express.static(__dirname + '/views'));
 
-app.get('/doug', function(req, res) {
-  //res.sendfile("views/index.html");
-  console.log("foundation");
-  res.sendfile("views/foundation.html");
+app.get('/single-page', function(req, res) {
+  res.sendfile("views/single-page.html");
 });
 
 //app.get('/contact', routes.contact);

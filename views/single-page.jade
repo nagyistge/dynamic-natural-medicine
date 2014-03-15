@@ -5,6 +5,7 @@ block stylesheets
 
 append scripts
   script(src='bower_components/jquery/dist/jquery.min.js')
+  script(src='bower_components/jquery-validation/dist/jquery.validate.min.js')
   //script(src='bower_components/jquery-ui/ui/minified/jquery.ui.effect.min.js');
   script(src='bower_components/foundation/js/foundation.min.js')
   script(src='js/app.min.js')
@@ -29,7 +30,13 @@ block content
     header#new-header
       h1 New Patients
     .content
-      span Contact us to make an appointment, the necessary forms will be available through your Patient Portal
+      .new-patients-callout
+        .contact-us
+          | Use the below
+          a(href="#contact") &nbsp;contact infomation
+          | &nbsp;to schedule an appointment. Once an appointment is booked the necessary New Patient forms will be available from the
+          a(href=info.links.patient.portal, target="_blank") &nbsp;Patient Portal
+          |.
 
       include includes/natropathic_definition
       include includes/accupunture_definition

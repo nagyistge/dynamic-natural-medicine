@@ -364,7 +364,7 @@ section.slide-section#contact {
     }
   }
 
-  input[type=text], textarea {
+  input[type=text], input[type=email], textarea {
     width: 100%;
     border: 1px solid #dddddd;
     padding: 1em 0 1em 1.25em;
@@ -715,4 +715,17 @@ footer {
 
 .read-more {
   text-align: center;
+}
+
+
+.new-patients-callout {
+  @include grid-row;
+
+  font-size: 1.5em;
+  line-height: normal;
+  margin-bottom: 2em;
+
+  .contact-us {
+    @include grid-column(12);
+  }
 }

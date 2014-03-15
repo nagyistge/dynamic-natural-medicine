@@ -1,13 +1,14 @@
-form#contact-form.row(method="post", action="http://grabber.grabgrab.io/capture/529f4575e7a67937e50001d9")
+form#contact-form.row(method="post", action="")
   .row
     .medium-6.columns
-      input(type="text", name="name", placeholder="What should we call you?")
+      input(type="text", name="name", placeholder="What should we call you?", required)
     .medium-6.columns
-      input(type="text", name="email", placeholder="Where can we email you back?")
+      input(type="email", name="email", placeholder="Where can we email you back?", required)
   .row
     .small-12.columns
       textarea(name="message", placeholder="How can we help you?")
-      button.g.submit(type="submit") Send It
+      button.g.submit(type="button", data-event="contact.send") Send It
+    // TODO: if success, replace form part, other wise show erro
 // TODO: error handling
 //  .grid.pad
     .form-plant

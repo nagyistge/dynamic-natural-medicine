@@ -1,303 +1,228 @@
-var dnm = dnm || {};
+var Doctor = Doctor || (function($) {
 
-dnm.preload = function()
-{
-  $(window).load(function() {
-    $('.loading-image').hide();
-    $('body').addClass('animated');
-    $('.add-animated').addClass('animated');
-  });
-};
+  var Utils   = {}, // Your Toolbox
+    Ajax    = {}, // Your Ajax Wrapper
+    Events  = {}, // Event-based Actions
+    App     = {}, // Your Global Logic and Initializer
+    Public  = {}; // Your Public Functions
 
-dnm.navigation = function()
-{
-  var mobileNav = $('.mobile-nav');
-  var mainNav = $('.main-nav');
-
-  function init()
-  {
-    mobileNav.click(openNav);
-  }
-
-  function openNav()
-  {
-    if (mainNav.hasClass('active'))
-    {
-      mainNav.removeClass('active');
-      mobileNav.removeClass('open');
-    }
-    else
-    {
-      mainNav.addClass('active');
-      mobileNav.addClass('open');
-    }
-  }
-
-  function functionTwo()
-  {
-    // JS CODE
-    window.hide();
-  }
-
-  init();
-};
-
-dnm.pageMoveAction = function()
-{
-  var $document = $(document);
-  var bg = $('.bg-pic');
-  var pleaseScrollText = $('.please-scroll');
-
-  function init()
-  {
-    $(window).scroll(function(e){
-      //parallax();
-      //pleaseScroll();
-    });
-
-  }
-
-  function parallax()
-  {
-    if ($(window).width() > 768)
-    {
-      var scrolled = $(window).scrollTop();
-      //bg.css('top', -(scrolled * 0.2) + 'px');
-      bg.css('top', -(scrolled * 1) + 'px');
-    }
-  }
-
-  function pleaseScroll()
-  {
-    if ($(window).width() > 768) {
-
-      if ($document.scrollTop() >= 350)
-      {
-        pleaseScrollText.fadeOut();
+  Utils = {
+    settings: {
+      debug: true,
+      meta: {
+        homeURL: ''
+      },
+      init: function() {
+        _log('Initializing Settings');
+        $('meta[name^="app-"]').each(function(){
+          Utils.settings.meta[ this.name.replace('app-','') ] = this.content;
+        });
+        _log('Initialized Settings');
       }
-      if ($document.scrollTop() >= 50)
-      {
-        pleaseScrollText.text("Keep going!");
+    },
+    cache: {
+      window: window,
+      document: document
+    },
+    home_url: function(path){
+      if(typeof path=="undefined"){
+        path = '';
       }
-      else
-      {
-        pleaseScrollText.text("Please scroll");
-        pleaseScrollText.fadeIn();
+      return Utils.settings.meta.homeURL+path+'/';
+    },
+    log: function() {
+      if (Utils.settings.debug) {
+        console.log.apply(console, arguments);
       }
+    },
+    checkIfExternalLink: function(href) {
+      return href.charAt(0) != '.' && href.charAt(0) != '#' && (href.charAt(0) != '/' || (href.indexOf("//") == 0 ));
+    },
+    parseRoute: function(input) {
 
-    }
-  }
+      var delimiter = input.delimiter || '/',
+        paths = input.path.split(delimiter),
+        check = input.target[paths.shift()],
+        exists = typeof check != 'undefined',
+        isLast = paths.length == 0;
+      input.inits = input.inits || [];
 
-  init();
-};
-
-dnm.showMoreWork = function()
-{
-  var showWork = $('.show-work');
-  var whiteBox = $('.white-box');
-  var closeWork = $('.close-work');
-  var workDiv = $('.work-div');
-  var $document = $(document);
-
-  function init()
-  {
-    //showWork.hover(showIt);
-    //closeWork.hover(normalState);
-    //showOnDesktop();
-  }
-
-  function showIt()
-  {
-    $(this).parent('.work-div').addClass('active');
-    showAll();
-  }
-
-  function normalState()
-  {
-    $(this).closest('.work-div').removeClass('active');
-  }
-
-  function showOnDesktop()
-  {
-    $(window).resize(function()
-    {
-      if ($(window).width() < 1170)
-      {
-        workDiv.removeClass('active');
-      }
-
-    });
-  }
-
-  init();
-};
-
-dnm.animations = function()
-{
-  var showWork = $('.show-work');
-
-  function init()
-  {
-    showInView();
-  }
-
-  function showInView()
-  {
-    $('.myclass').bind('inview', function (event, visible) {
-      if (visible == true) {
-        // element is now visible in the viewport
-        $(this).removeClass('myclass');
-        alert('found h2!')
+      if (exists) {
+        if(typeof check.init == 'function'){
+          input.inits.push(check.init);
+        }
+        if (isLast) {
+          input.parsed.call(undefined, {
+            exists: true,
+            type: typeof check,
+            obj: check,
+            inits: input.inits
+          });
+        } else {
+          Utils.parseRoute({
+            path: paths.join(delimiter),
+            target: check,
+            delimiter: delimiter,
+            parsed: input.parsed,
+            inits: input.inits
+          });
+        }
       } else {
-        // element has gone out of viewport
-        $(this).addClass('myclass');
+        input.parsed.call(undefined, {
+          exists: false
+        });
       }
-    });
-  }
+    }
+  };
+  var _log = Utils.log;
 
-  init();
-};
-
-dnm.retinaDetect = function()
-{
-  var retina = window.devicePixelRatio > 1;
-  var retinaImage = $('.detect-retina');
-  var retinaImageLazy = $('.detect-retina-lazy');
-
-  function init()
-  {
-    detect();
-  }
-
-  function detect()
-  {
-    if (retina) {
-
-      retinaImage.each(function(index, element) {
-        var img = $(this);
-        img.addClass('retina-detected');
-        img.attr('src', img.attr('src').replace('.jpg', '@2x.jpg'));
-        img.attr('src', img.attr('src').replace('.png', '@2x.png'));
+  Ajax = {
+    ajaxUrl: Utils.home_url(''),
+    send: function(type, method, data, returnFunc){
+      console.log(type, Ajax.ajaxUrl, method, data);
+      $.ajax({
+        type:'POST',
+        url: Ajax.ajaxUrl+method,
+        dataType:'json',
+        data: data,
+        success: returnFunc
       });
-
-      retinaImageLazy.each(function(index, element) {
-        var img = $(this);
-        img.addClass('retina-detected');
-        img.attr('data-original', img.attr('data-original').replace('.jpg', '@2x.jpg'));
-        img.attr('data-original', img.attr('data-original').replace('.png', '@2x.png'));
-      });
+    },
+    call: function(method, data, returnFunc){
+      Ajax.send('POST', method, data, returnFunc);
+    },
+    get: function(method, data, returnFunc){
+      Ajax.send('GET', method, data, returnFunc);
     }
-    else {
-      retinaImage.addClass('retina-not-detected');
-    }
-  }
+  };
 
-  init();
-};
+  Events = {
+    endpoints: {
+      contact: {
+        send: function(e) {
+          // client side validate
+          console.log("contact.send");
+          var $this = $(this);
+          var form = $("#contact-form");
+          var name = $("input[name=name]", form).val();
+          var email = $("input[name=email]", form).val();
+          var message = $("textarea[name=message]", form).val();
 
-dnm.trackOutboundLink = function() {
-  var $this = $(this);
-  console.log($this);
+          _log("foirm", $("#contact-form").serialize());
 
-  var url = $this.attr("href");
-  console.log(url);
+          var data = { name: name, email: email, message: message };
+          console.log("data", data);
 
-  setTimeout(function() {
+          var url = "/contact";
 
-  ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
-    function () {
-      //document.location = url;
-    }
-  });
-  }, 5000);
+          $.post(url, data, function(result) {
+            _log( "success", result );
+          })
+          .done(function() {
+              _log( "second success" );
+          })
+          .fail(function(error) {
+              _log( "error", error );
+              _log("error", error.status);
+          })
+          .always(function() {
+              _log( "finished" );
+          });
+          //Ajax.call("contact", data, function(result) {
+          //  console.log("got result", result);
+          //});
+        }
+      },
+      read: {
+        more: function(e) {
+          var $this = $(this);
+          var target = $($this.data("target"));
+          target.show();
+          $this.hide();
+          // TODO: google analytics
+        }
+      }
+    },
+    bindEvents: function(){
+      _log('Binding Events');
+      $('[data-event]').each(function(){
+        var _this = this,
+          method = _this.dataset.method || 'click',
+          name = _this.dataset.event,
+          bound = _this.dataset.bound;
 
-}
-
-$(function()
-{
-  $(document).foundation({ "magellan-expedition": { destination_threshold: 85 } });
-
-  //new dnm.preload();
-  //new dnm.navigation();
-  //new dnm.pageMoveAction();
-  //new dnm.showMoreWork();
-  //new dnm.animations();
-  //new dnm.retinaDetect();
-
-  // TODO: move into functions on object
-
-  $("#extend-intro").on("click.dnm.more", function() {
-    $("#extended-intro").show();
-    $(this).hide(); // TODO: toggle, Read Less
-    // TODO: google analytics
-  });
-
-
-  function checkIfExternalLink(href) {
-    return href.charAt(0) != '.' && href.charAt(0) != '#' && (href.charAt(0) != '/' || (href.indexOf("//") == 0 ));
-  }
-
-  // TODO: setup testing...
-  console.log(checkIfExternalLink("/about"));
-  console.log(checkIfExternalLink("./doug"));
-  console.log(checkIfExternalLink("#about"));
-  console.log(checkIfExternalLink("//"));
-  console.log(checkIfExternalLink("http://www"));
-  console.log(checkIfExternalLink("https://www"));
-
-  $('a:not([href*="' + document.domain + '"])').mousedown(function(event){
-    // Just in case, be safe and don't do anything
-    if (typeof ga == 'undefined') {
-      return;
-    }
-
-    var link = $(this);
-    var href = link.attr('href');
-    if (checkIfExternalLink(href)) {
-      var noProtocol = href.replace(/http[s]?:\/\//, '');
-
-      // Track the event
-      //_gat._getTrackerByName()._trackEvent('Outbound Links', noProtocol);
-      ga('send', 'event', 'outbound', 'click', noProtocol, {
-        'hitCallback': function() {
-          //console.log("tracked external link click");
+        if(!bound){
+          Utils.parseRoute({
+            path: name,
+            target: Events.endpoints,
+            delimiter: '.',
+            parsed: function(res) {
+              if(res.exists){
+                _this.dataset.bound = true;
+                $(_this).on(method, function(e){
+                  res.obj.call(_this, e);
+                });
+              }
+            }
+          });
         }
       });
+      _log('Events Bound');
+    },
+    bindTrackingEvents: function() {
+      $('a:not([href*="' + document.domain + '"])').mousedown(function (event) {
+        // Just in case, be safe and don't do anything
+        if (typeof ga == 'undefined') {
+          return;
+        }
+
+        var link = $(this);
+        var href = link.attr('href');
+        if (checkIfExternalLink(href)) {
+          var noProtocol = href.replace(/http[s]?:\/\//, '');
+
+          // Track the event
+          //_gat._getTrackerByName()._trackEvent('Outbound Links', noProtocol);
+          ga('send', 'event', 'outbound', 'click', noProtocol, {
+            'hitCallback': function () {
+              //console.log("tracked external link click");
+            }
+          });
+        }
+      });
+    },
+    bindReadMoreEvents: function() {
+      $("")
+      $("#extend-intro").on("click.dnm.more", function() {
+        $("#extended-intro").show();
+        $(this).hide(); // TODO: toggle, Read Less
+        // TODO: google analytics
+      });
+    },
+    init: function(){
+      Events.bindEvents();
     }
-  });
+  };
+  App = {
+    logic: {},
+    init: function() {
+      _log('Initializing Foundation');
+      $(document).foundation({ "magellan-expedition": { destination_threshold: 85 } });
+      _log('Initialized Foundation');
 
-  var navigation_scroll_speed = 600;
-  // Animate internal links
-  //
-  $('a[href^="#"]:not(.mobile-menu)').on('click',function (e) {
-    e.preventDefault();
+      _log('Initializing App');
+      Utils.settings.init();
+      Events.init();
+      _log('Initialized App');
+    }
+  };
 
+  Public = {
+    init: App.init
+  };
 
+  return Public;
 
-    var target = this.hash,
-      $target = $(target);
+})(window.jQuery);
 
-    console.log(":hh", $target.css('padding-top'));
-      var target_padding_top = parseInt( $target.css('padding-top')||0, 10);
-
-    //if ($target.parent().hasClass(".toggle-topbar")) {
-    //  return;
-    //}
-
-      $("section.slide-section").removeClass("active");
-      $target.addClass("active");
-
-      console.log("1",target_padding_top);
-      console.log("2",$target.offset().top);
-      console.log("3",$target.css('padding-top'));
-      //target_padding_top += 85;
-      //target_padding_top += 34;
-    $('html, body').stop().animate({
-      'scrollTop': $target.offset().top - target_padding_top
-    //}, parseInt(navigation_scroll_speed, 10), 'easeInOutExpo');
-    //}, parseInt(navigation_scroll_speed, 10), 'easeOutQuart');
-      //TODO: fix jquery ui reference
-    }, parseInt(navigation_scroll_speed, 10), 'swing');
-  });
-
-});
+jQuery(document).ready(Doctor.init);

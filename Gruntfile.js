@@ -55,8 +55,7 @@ module.exports = function(grunt) {
 
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-          '<%= grunt.template.today("yyyy-mm-dd") %> */',
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */',
         compress: {
           drop_console: true
         },
@@ -85,6 +84,16 @@ module.exports = function(grunt) {
       jade: {
         files: ['views/**/*.jade'],
         tasks: ['jade'],
+
+        options: {
+          livereload: true
+        }
+      },
+
+      scripts: {
+        //files: ['public/js/**/*.js'],
+        files: ['public/js/app.js'],
+        tasks: ['uglify'],
 
         options: {
           livereload: true

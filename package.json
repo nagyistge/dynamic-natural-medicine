@@ -17,7 +17,8 @@
     "grunt-cli": "*",
     "grunt": "*",
     "bower": "*",
-    "nodemailer": "*"
+    "nodemailer": "*",
+    "nconf": "*"
   },
   "devDependencies": {
     "node-sass": "*",

@@ -47,7 +47,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 @import "mixins";
 
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500|Roboto+Slab:400,300|Source+Sans+Pro:200,300,400|Roboto+Condensed:400,700,300|Syncopate:400,700|Sorts+Mill+Goudy|PT+Sans);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500|Roboto+Slab:400,300|Source+Sans+Pro:200,300,400|Roboto+Condensed:400,700,300|Syncopate:400,700|Sorts+Mill+Goudy|PT+Sans|Cookie);
 
 $primary-color: #2D81C1;
 $secondary-color: #C12D81;
@@ -762,5 +762,22 @@ footer {
   @include grid-row;
   > div {
     @include grid-column(12);
+  }
+}
+
+.not-found {
+  position: relative;
+  top: 50%;
+  text-align: center;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 5em;
+    font-family: 'Cookie', cursive;
+    text-shadow: 1px 1px 1px #aaa;
+  }
+
+  .message {
+
   }
 }

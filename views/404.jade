@@ -3,8 +3,19 @@ extends layout
 block stylesheets
   link(rel='stylesheet', href='css/app.css')
 
+append scripts
+  script(src='bower_components/jquery/dist/jquery.min.js')
+  script.
+    $(".not-found").on("mouseenter", function() {
+      var self = this;
+      $.when($("h1", self).fadeTo(1000, 0), $(".message", self).fadeTo(2000, 0)).then(function() {
+        $(".message", self).html('<span>Mind blow! Let\'s go back to a simpler time/<a href="/">space</a>.</span>').fadeTo(2000, 100);
+      });
+    });
+
 block content
-  .row
-    .small-12.columns
-      h1 404
-      .not-found This page cannot be found where it truly doesn't exist...
+  .not-found
+    .row
+      .small-12.columns
+        h1 404
+        .message This page cannot be found where it truly doesn't exist...

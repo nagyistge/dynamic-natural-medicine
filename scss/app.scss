@@ -259,7 +259,7 @@ section.slide-section#services {
     text-align: center;
 
     h3 {
-      font-size: 1.5em;
+      font-size: 1.75em;
       font-weight: 400;
       color: #a2a3a3;
 
@@ -273,11 +273,32 @@ section.slide-section#services {
 
     p {
       color: #737272;
+
+      .service-title {
+        font-size: 1.25em;
+      }
+
+      .service-length {
+        &:before {
+          content: " (";
+        }
+
+        &:after {
+          content: "): ";
+        }
+      }
+
+      .service-price {
+        &:before {
+          content: "$"
+        }
+      }
     }
   }
 
   .discounts {
     margin-bottom: em-calc(80);
+    margin-top: em-calc(30);
   }
 
   .discount {
@@ -320,6 +341,7 @@ section.slide-section#services {
     border: 3px solid #bbb;
     margin: 0 auto;
     padding: 20px;
+    padding-bottom: 80px;
     line-height: 1.2em;
     text-align: center;
     border-radius: 0px;
@@ -451,6 +473,7 @@ section.slide-section {
     font-weight: 300;
     color: #333;
     font-family: 'PT Sans', sans-serif;
+    font-size: 1.25em;
   }
 
   > .content {
@@ -726,6 +749,18 @@ footer {
   margin-bottom: 2em;
 
   .contact-us {
+    @include grid-column(12);
+  }
+}
+
+.service-info {
+  @include grid-row;
+  margin-bottom: em-calc(30);
+}
+
+.bio {
+  @include grid-row;
+  > div {
     @include grid-column(12);
   }
 }

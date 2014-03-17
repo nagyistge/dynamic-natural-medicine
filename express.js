@@ -13,9 +13,9 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use(express.static(__dirname + "/public"));
-app.use(express.static(__dirname + '/views'));
+//app.use(express.static(__dirname + '/views'));
 
-app.get('/single-page', function(req, res) {
+app.get('/', function(req, res) {
   res.sendfile("views/single-page.html");
 });
 
@@ -57,7 +57,8 @@ app.post("/contact", function(req, res) {
 
 // all else
 app.get('*', function(req, res) {
-  res.send("404");
+  res.status(404);
+  res.sendfile("views/404.html");
 });
 
 module.exports = app;

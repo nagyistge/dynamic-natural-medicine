@@ -705,7 +705,8 @@ footer {
 
 
 .bg-pic {
-  background-color: #303642;
+  //background-color: #303642;
+  background-color: #ffffff;
   height: 100%;
   left: 0;
   position: fixed;
@@ -785,4 +786,31 @@ footer {
   .message {
 
   }
+}
+
+.welcome {
+  font-family: 'Sorts Mill Goudy', serif;
+
+  /* Normal without line-height change
+  position: relative;
+  top: 50%;
+  height: 3em;
+  font-size: 3em;
+  margin-top: -1.5em;
+  text-align: center;
+  background: #fff;
+  */
+
+  $welcome-line-height: 2em;
+  $welcome-font-size: 4em;
+
+
+  position: relative;
+  top: 50%;
+  height: $welcome-font-size;
+  font-size: $welcome-font-size;
+  margin-top: -( ($welcome-font-size/2) + ($welcome-line-height/2) );
+  text-align: center;
+  background: #fff;
+  line-height: $welcome-line-height;
 }

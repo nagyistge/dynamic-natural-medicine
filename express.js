@@ -22,6 +22,8 @@ app.get('/', function(req, res) {
   res.sendfile("views/single-page.html");
 });
 
+console.log("--", nconf.get("google:gmail:user"), nconf.get("google:gmail:password"));
+
 var nodemailer = require('nodemailer');
 
 app.post("/contact", function(req, res) {

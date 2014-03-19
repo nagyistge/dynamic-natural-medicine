@@ -538,6 +538,11 @@ section.slide-section.active {
       @include icon(phone);
     }
 
+    .name {
+      @include icon(th-large);
+      text-transform: none;
+    }
+
     .email {
       @include icon(envelope-o);
       //white-space:nowrap;

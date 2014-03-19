@@ -11,6 +11,8 @@ nconf.argv()
 // TODO: setup loggly
 // TODO: set logo on admin.google.com
 
+console.log("env", process.env);
+
 app.use(logfmt.requestLogger());
 app.use(express.json());
 app.use(express.urlencoded());

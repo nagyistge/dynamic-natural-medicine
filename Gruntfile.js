@@ -58,7 +58,8 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */',
         compress: {
           // TODO: bug not dropping console with console.log.apply
-          drop_console: true
+          drop_console: true,
+          pure_funcs: [ 'console.log.apply' ]
         },
         sourceMap: true,
         sourceMapName: 'public/js/app.min.js.map'

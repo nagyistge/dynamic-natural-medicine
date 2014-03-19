@@ -404,7 +404,7 @@ section.slide-section#contact {
     height: 200px;
   }
 
-  button[type=button] {
+  button[type=submit] {
     font-size: em-calc(22px);
     font-family: normal;
     width: 100%;
@@ -412,6 +412,28 @@ section.slide-section#contact {
     height: 3em;
     padding: 1em 0 1em 1.25em;
     font-weight: 100;
+  }
+
+  .alert {
+    background: $secondary-color;
+    height: 3em;
+    padding: 1em 0 1em 1.25em;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1em;
+    color: #ffffff;
+  }
+
+  .thank-you {
+    background: $primary-color;
+    text-align: center;
+    height: 3em;
+    padding: 1em 0 1em 1.25em;
+    text-align: center;
+    font-size: 2em;
+    width: 100%;
+    color: #ffffff;
+    margin: 2em 0 0 0;
   }
 }
 
@@ -527,6 +549,18 @@ section.slide-section.active {
 
       span {
         text-align: right;
+      }
+    }
+
+    .address-message {
+      //@include icon(asterisk);
+      @include icon(info);
+      text-transform: none;
+
+      a {
+        &:before, &:after {
+          content: " "
+        }
       }
     }
 

@@ -1,3 +1,4 @@
+
 .contact-info
   section
     .email
@@ -16,9 +17,14 @@
           span(itemprop="streetAddress") #{info.address.line1} | #{info.address.line2}
           br
           span(itemprop="addressLocality") #{info.address.city}
-          | ,
+          | ,&nbsp;
           span(itemprop="addressRegion") #{info.address.state}
-          | ,
+          | ,&nbsp;
           span(itemprop="postalCode") #{info.address.zip}
+  section
+    .address-message
+      span We are sharing space with
+        a(href="//www.vitalkidsmedicine.com/", target="_blank") Vital Kids Medicine.
+        | Please look for this on the door.
 
   // TODO: use geolocation, https://github.com/estebanav/javascript-mobile-desktop-geolocation or bower component

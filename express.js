@@ -24,8 +24,6 @@ app.get('/', function(req, res) {
   res.sendfile("views/single-page.html");
 });
 
-console.log("--", nconf.get("google:gmail:user"), nconf.get("google:gmail:password"));
-
 var nodemailer = require('nodemailer');
 
 app.post("/contact", function(req, res) {
@@ -62,7 +60,8 @@ app.post("/contact", function(req, res) {
     //to: 'info@dynamicnaturalmedicine.com',
     to: 'doug@dynamicnaturalmedicine.com',
     subject: '(' + req.body.name + ') Contact Us - DynamicNaturalMedicine.com',
-    text: "name: " + req.body.name + "</br>" + "email: " + req.body.email + "</br>" + "message: " + req.body.message
+    text: "name: " + req.body.name + " ::: " + "email: " + req.body.email + " ::: " + "message: " + req.body.message,
+    html: "name: " + req.body.name + "</br>" + "email: " + req.body.email + "</br>" + "message: " + req.body.message
   };
 
   smtpTrans.sendMail(mailOpts, function (error, response) {

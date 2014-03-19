@@ -102,21 +102,55 @@ var Doctor = Doctor || (function($) {
         send: function(e) {
           // TODO: client side validate
           var $this = $(this);
+          var thank_you = $(".thank-you").hide();
           var form = $("#contact-form");
+          var error = $(".alert", form).hide();
           var name = $("input[name=name]", form).val();
           var email = $("input[name=email]", form).val();
           var message = $("textarea[name=message]", form).val();
 
-          _log("foirm", $("#contact-form").serialize());
+          if (!form[0].checkValidity()) {
+            return;
+          }
+
+          _log("form", $("#contact-form").serialize());
 
           var data = { name: name, email: email, message: message };
           console.log("data", data);
 
           var url = "/contact";
 
+          // TODO: turn into promise
           $.post(url, data, function(result) {
-            _log( "success", result );
-            $("#contact-form").text(result.message);
+            _log("here", result);
+            if (result && result.error) {
+              error.show().text(result.message);
+            } else {
+              _log("success", result);
+
+              //savingIndicator.delay(1000).fadeOut(300, function() {
+              //  $(this).removeClass().addClass(resultText).fadeIn(300).delay(2000).fadeOut();
+              //});
+
+              _log("animating");
+              form.fadeOut(500, function() {
+                _log("form fade out");
+
+                thank_you.text(result.message);
+                form.remove();
+
+                thank_you.fadeIn(1000, function() {
+                  _log("thank_you fade in");
+
+                  thank_you.delay(3000).fadeOut(2000, function() {
+                    thank_you.remove();
+                  });
+                });
+              });
+
+              //$("#contact-form").remove();
+              //thank_you.text(result.message).show();
+            }
           })
           .done(function() {
               _log( "second success" );
@@ -127,10 +161,14 @@ var Doctor = Doctor || (function($) {
           })
           .always(function() {
               _log( "finished" );
+
           });
           //Ajax.call("contact", data, function(result) {
           //  console.log("got result", result);
           //});
+
+          // stop the form from submitting and refreshing
+          e.preventDefault();
         }
       },
       read: {

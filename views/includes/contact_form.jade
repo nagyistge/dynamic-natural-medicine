@@ -1,4 +1,8 @@
-form#contact-form.row(method="post", action="")
+.thank-you.hide
+form#contact-form.row(method="post", action="", data-event="contact.send", data-method="submit")
+  .row
+    .small-12.columns
+      .alert.hide Error Message
   .row
     .medium-6.columns
       input(type="text", name="name", placeholder="What should we call you?", required)
@@ -6,8 +10,8 @@ form#contact-form.row(method="post", action="")
       input(type="email", name="email", placeholder="Where can we email you back?", required)
   .row
     .small-12.columns
-      textarea(name="message", placeholder="How can we help you?")
-      button.g.submit(type="button", data-event="contact.send") Send It
+      textarea(name="message", placeholder="How can we help you?", required)
+      button.g.submit(type="submit") Send It
     // TODO: if success, replace form part, other wise show erro
 // TODO: error handling
 //  .grid.pad

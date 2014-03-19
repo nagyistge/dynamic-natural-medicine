@@ -64,7 +64,7 @@ app.post("/contact", function(req, res) {
     //to: 'info@dynamicnaturalmedicine.com',
     to: 'doug@dynamicnaturalmedicine.com',
     subject: '(' + req.body.name + ') Contact Us - DynamicNaturalMedicine.com',
-    text: "name: " + req.body.name + " ::: " + "email: " + req.body.email + " ::: " + "message: " + req.body.message,
+    //text: "name: " + req.body.name + " ::: " + "email: " + req.body.email + " ::: " + "message: " + req.body.message,
     html: "name: " + req.body.name + "</br>" + "email: " + req.body.email + "</br>" + "message: " + req.body.message
   };
 

@@ -14,8 +14,8 @@
         a(href="tel:" + info.phone)
           span(itemprop="telephone")= info.phoneFormatted
   section
-    .address
-      span(itemprop=”address”, itemscope, itemtype=”http://schema.org/PostalAddress”)
+    .address(itemprop="address", itemscope, itemtype="http://schema.org/PostalAddress")
+      span
         a(href="//maps.google.com/maps?saddr=&daddr=" + encodeURIComponent(info.address.oneline), target="_blank")
           span(itemprop="streetAddress") #{info.address.line1} | #{info.address.line2}
           br

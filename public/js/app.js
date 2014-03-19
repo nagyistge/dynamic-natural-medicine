@@ -100,8 +100,7 @@ var Doctor = Doctor || (function($) {
     endpoints: {
       contact: {
         send: function(e) {
-          // client side validate
-          console.log("contact.send");
+          // TODO: client side validate
           var $this = $(this);
           var form = $("#contact-form");
           var name = $("input[name=name]", form).val();
@@ -117,6 +116,7 @@ var Doctor = Doctor || (function($) {
 
           $.post(url, data, function(result) {
             _log( "success", result );
+            $("#contact-form").text(result.message);
           })
           .done(function() {
               _log( "second success" );

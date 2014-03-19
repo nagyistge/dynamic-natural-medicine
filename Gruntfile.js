@@ -57,6 +57,7 @@ module.exports = function(grunt) {
       options: {
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */',
         compress: {
+          // TODO: bug not dropping console with console.log.apply
           drop_console: true
         },
         sourceMap: true,

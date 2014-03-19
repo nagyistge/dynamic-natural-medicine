@@ -8,6 +8,9 @@ nconf.argv()
   .env()
   .file({ file: 'config/config.json' });
 
+// TODO: setup loggly
+// TODO: set logo on admin.google.com
+
 app.use(logfmt.requestLogger());
 app.use(express.json());
 app.use(express.urlencoded());
@@ -37,15 +40,29 @@ app.post("/contact", function(req, res) {
     }
   });
 
+  /*
+  smtpTrans = nodemailer.createTransport("SMTP", {
+    host: "smtp.gmail.com", // hostname
+    secureConnection: true, // use SSL
+    port: 465, // port for secure SMTP
+    auth: {
+      user: nconf.get("google:gmail:user"),
+      pass: nconf.get("google:gmail:password")
+    }
+  });
+  */
+
   //Mail options
   mailOpts = {
     from: req.body.name + ' &lt;' + req.body.email + '&gt;',
-    to: 'info@dynamicnaturalmedicine.com',
-    subject: 'Contact Us - DynamicNaturalMedicine.com',
-    text: req.body.message
+    //to: 'info@dynamicnaturalmedicine.com',
+    to: 'doug@dynamicnaturalmedicine.com',
+    subject: '(' + req.body.name + ') Contact Us - DynamicNaturalMedicine.com',
+    text: "name: " + req.body.name + "</br>" + "email: " + req.body.email + "</br>" + "message: " + req.body.message
   };
 
   smtpTrans.sendMail(mailOpts, function (error, response) {
+    console.log("sendMail", error, response);
     if (error) {
       res.json({ error: true, message: "Oops, something went wrong, please try again later." });
     }

@@ -24,6 +24,10 @@ app.get('/BingSiteAuth.xml', function(req, res) {
   res.sendfile("BingSiteAuth.xml");
 });
 
+app.get('/pinterest-105fa.html', function(req, res) {
+  res.sendfile("pinterest-105fa.html");
+});
+
 app.get('/', function(req, res) {
   res.sendfile("views/single-page.html");
 });

@@ -100,6 +100,8 @@ var Doctor = Doctor || (function($) {
     endpoints: {
       contact: {
         send: function(e) {
+          ga('send', 'event', 'button', 'click', 'contact');
+
           // TODO: client side validate
           var $this = $(this);
           var thank_you = $(".thank-you").hide();
@@ -125,7 +127,10 @@ var Doctor = Doctor || (function($) {
             _log("here", result);
             if (result && result.error) {
               error.show().text(result.message);
+              ga('send', 'event', 'post', '/contact', "error");
             } else {
+              ga('send', 'event', 'post', '/contact', "success");
+
               _log("success", result);
 
               //savingIndicator.delay(1000).fadeOut(300, function() {
@@ -177,7 +182,8 @@ var Doctor = Doctor || (function($) {
           var target = $($this.data("target"));
           target.show();
           $this.hide();
-          // TODO: google analytics
+          ga('send', 'event', 'readmore', 'click', $(this).attr("id"));
+          //ga('send', 'event', 'button', 'click', 'nav buttons', 4);
         }
       }
     },
@@ -227,14 +233,6 @@ var Doctor = Doctor || (function($) {
             }
           });
         }
-      });
-    },
-    bindReadMoreEvents: function() {
-      $("")
-      $("#extend-intro").on("click.dnm.more", function() {
-        $("#extended-intro").show();
-        $(this).hide(); // TODO: toggle, Read Less
-        // TODO: google analytics
       });
     },
     init: function(){

@@ -19,6 +19,14 @@ module.exports = function(grunt) {
       }
     },
 
+    /*
+    sitemap: {
+      dist: {
+        siteRoot: 'views/'
+      }
+    },
+    */
+
     sass: {
       options: {
         includePaths: ['bower_components/foundation/scss','bower_components/font-awesome/scss',require('node-bourbon').includePaths]
@@ -118,6 +126,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-sitemap');
 
   grunt.registerTask('build', ['sass','jade','uglify']);
   grunt.registerTask('default', ['build','express','watch']);

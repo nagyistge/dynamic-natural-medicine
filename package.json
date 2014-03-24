@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Dynamic Natural Medicine",
   "main": "app.js",
+  "homepage": "http://www.dynamicnaturalmedicine.com/",
   "scripts": {
     "postinstall": "./node_modules/bower/bin/bower install"
   },
@@ -39,7 +40,8 @@
     "grunt-contrib-connect": "*",
     "grunt-usemin": "*",
     "grunt-express": "*",
-    "grunt-contrib-jade": "~0.10.0",
+    "grunt-contrib-jade": "*",
+    "grunt-sitemap": "*",
     "mocha": "*",
     "should": "*",
     "sinon": "*",

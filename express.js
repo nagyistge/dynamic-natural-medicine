@@ -17,16 +17,10 @@ app.use(logfmt.requestLogger());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
+
+// make sure no filename collisions
 app.use(express.static(__dirname + "/public"));
-//app.use(express.static(__dirname + '/views'));
-
-app.get('/BingSiteAuth.xml', function(req, res) {
-  res.sendfile("BingSiteAuth.xml");
-});
-
-app.get('/pinterest-105fa.html', function(req, res) {
-  res.sendfile("pinterest-105fa.html");
-});
+app.use(express.static(__dirname + "/views/meta"));
 
 app.get('/', function(req, res) {
   res.sendfile("views/single-page.html");

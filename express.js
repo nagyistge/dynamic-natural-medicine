@@ -14,6 +14,7 @@ nconf.argv()
 console.log("env", process.env);
 
 app.use(logfmt.requestLogger());
+app.use(express.compress());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use('/bower_components', express.static(__dirname + '/bower_components'));

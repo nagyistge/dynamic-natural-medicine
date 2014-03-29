@@ -156,7 +156,7 @@ section.slide-section:first-of-type {
 nav.top-bar {
   background-color: rgba(255,255,255,1.0);
   border-bottom: 1px solid rgba(0,0,0,0.1);
-  border-top: 5px solid $primary-color;
+  //border-top: 5px solid $primary-color;
   text-transform: uppercase;
   //background-color: #2d81c1;
   //border-top: 2px solid #91B1FA;
@@ -445,7 +445,7 @@ section.slide-section:nth-of-type(odd) {
 section.slide-section {
   //background: $section-slide-background;
   background: white;
-  padding: $topbar-height 2em;
+  padding: $topbar-height 0; //2em;
   min-height: 100%;
   //padding: em-calc(50);
   position: relative;

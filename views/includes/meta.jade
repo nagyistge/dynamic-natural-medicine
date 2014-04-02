@@ -1,3 +1,8 @@
+// other stuff
+meta(name="description", content=meta.description)
+meta(http-equiv="content-language" content="en_US")
+meta(name="author", content=meta.author)
+
 // https://developers.facebook.com/docs/opengraph/#types
 // https://developers.facebook.com/docs/reference/opengraph/object-type/business.business/
 meta(property="fb:page_id", content=meta.facebook.page_id)
@@ -17,7 +22,6 @@ meta(property='business:contact_data:country_name', content=meta.facebook.countr
 //meta(property='place:location:latitude', content='Sample Location: Latitude')
 //meta(property='place:location:longitude', content='Sample Location: Longitude')
 
-
 // https://dev.twitter.com/docs/cards
 meta(name="twitter:card", content="summary")
 meta(name="twitter:title", content=meta.twitter.title || meta.title)
@@ -33,10 +37,6 @@ meta(itemprop="name" content=meta.googleplus.name || meta.title)
 meta(itemprop="url" content=meta.googleplus.url)
 link(rel="author", href=meta.googleplus.url)
 link(rel="publisher", href=meta.googleplus.url)
-
-// other stuff
-meta(name="author", content=meta.author)
-meta(name="description", content=meta.description)
 
 // bing
 meta(name="msvalidate.01", content="7481C68261506A1198AEE550FE333B1E")

@@ -40,7 +40,8 @@ var locals = {
       image: ""
     },
     googleplus: {
-      url: "https://plus.google.com/+DynamicNaturalMedicine"
+      //url: "https://plus.google.com/+DynamicNaturalMedicine"
+      url: "https://plus.google.com/111256364138807264344"
     }
   }
 };

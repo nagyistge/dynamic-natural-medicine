@@ -7,8 +7,22 @@
         <image:image>
             <image:loc>http://www.dynamicnaturalmedicine.com/assets/images/headshot.png</image:loc>
         </image:image>
-
-        <lastmod>2014-03-20T00:57:29+00:00</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://www.dynamicnaturalmedicine.com/#new</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://www.dynamicnaturalmedicine.com/#contact</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://www.dynamicnaturalmedicine.com/#services</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://www.dynamicnaturalmedicine.com/#about</loc>
         <changefreq>daily</changefreq>
     </url>
 </urlset>

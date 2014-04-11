@@ -9,20 +9,4 @@
         </image:image>
         <changefreq>daily</changefreq>
     </url>
-    <url>
-        <loc>http://www.dynamicnaturalmedicine.com/#new</loc>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>http://www.dynamicnaturalmedicine.com/#contact</loc>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>http://www.dynamicnaturalmedicine.com/#services</loc>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>http://www.dynamicnaturalmedicine.com/#about</loc>
-        <changefreq>daily</changefreq>
-    </url>
 </urlset>

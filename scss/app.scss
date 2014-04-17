@@ -253,10 +253,12 @@ section.slide-section#services {
 
   }
 
-  .service-centered {
+  .service {
     @include grid-column(12,$collapse:true,$center:true);
 
-    text-align: center;
+    &.centered {
+      text-align: center;
+    }
 
     h3 {
       font-size: 1.75em;

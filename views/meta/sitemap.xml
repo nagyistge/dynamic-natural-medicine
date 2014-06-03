@@ -6,7 +6,25 @@
         <loc>http://www.dynamicnaturalmedicine.com/</loc>
         <image:image>
             <image:loc>http://www.dynamicnaturalmedicine.com/assets/images/headshot.png</image:loc>
+            <image:title>Dr. Jennifer S Read ND LAc | Dynamic Natural Medicine</image:title>
+            <image:caption>Dr. Jennifer S Read ND LAc of Dynamic Natural Medicine, naturopathic doctor/acupuncturist in Seattle WA, specializes in pediatrics, fertility, women's health</image:caption>
         </image:image>
-        <changefreq>daily</changefreq>
+        <image:image>
+            <image:loc>http://www.dynamicnaturalmedicine.com/assets/images/DNM_Logo_Color_HR_OLs_Fin_052014.png</image:loc>
+            <image:title>Dynamic Natural Medicine</image:title>
+            <image:caption>Dr. Jennifer S Read ND LAc of Dynamic Natural Medicine, naturopathic doctor/acupuncturist in Seattle WA, specializes in pediatrics, fertility, women's health</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>http://www.dynamicnaturalmedicine.com/assets/images/DNM_Logo_Flower_Color_HR_Fin_052014.png</image:loc>
+            <image:title>Dynamic Natural Medicine</image:title>
+            <image:caption>Dr. Jennifer S Read ND LAc of Dynamic Natural Medicine, naturopathic doctor/acupuncturist in Seattle WA, specializes in pediatrics, fertility, women's health</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>http://www.dynamicnaturalmedicine.com/assets/images/DNM_Logo_Flower_Color_LR_Fin_052014.png</image:loc>
+            <image:title>Dynamic Natural Medicine</image:title>
+            <image:caption>Dr. Jennifer S Read ND LAc of Dynamic Natural Medicine, naturopathic doctor/acupuncturist in Seattle WA, specializes in pediatrics, fertility, women's health</image:caption>
+        </image:image>
+        <changefreq>weekly</changefreq>
     </url>
+
 </urlset>

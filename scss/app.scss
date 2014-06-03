@@ -93,6 +93,16 @@ h1 {
 
 .top-bar {
   .name {
+    background: url(/assets/images/DNM_Logo_Flower_Color_LR_Fin_052014.png) no-repeat;
+    //background-position: center;
+    opacity: .80;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-size: contain; // cover|contain
+    height: 100%;
+
     h1 {
       a {
         width: 25%;
@@ -201,6 +211,9 @@ nav.top-bar {
   ul {
     li:hover > a > span {
       border-bottom: 2px solid $primary-color;
+    }
+    li > a > span {
+      font-size: 1.25em;
     }
 
 
@@ -769,8 +782,23 @@ footer {
   left: 0;
   position: fixed;
   top: 0;
+  //width: auto;
   width: 100%;
   z-index: -1;
+
+  .img {
+    //@include grid-column(8);
+    //@include background-image(url('/assets/images/DNM_Logo_Color_HR_OLs_Fin_052014.png'));
+    //background: url(/assets/images/DNM_Logo_Color_HR_OLs_Fin_052014.png) no-repeat center center fixed;
+    background: url(/assets/images/DNM_Logo_Color_HR_OLs_Fin_052014.png) no-repeat;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-size: contain; // cover|contain
+    height: 100%;
+    //margin-bottom: $topbar-height;
+  }
 }
 
 
@@ -847,23 +875,40 @@ footer {
 }
 
 .welcome {
-  //@include background-image(url('/assets/images/DNM_Logo_Color_HR_OLs_Fin_052014.png'));
-  //background-size: cover; // cover|contain
+//  //@include background-image(url('/assets/images/DNM_Logo_Color_HR_OLs_Fin_052014.png'));
+//  background: url(/assets/images/DNM_Logo_Color_HR_OLs_Fin_052014.png) no-repeat center center fixed;
+//  -webkit-background-size: cover;
+//  -moz-background-size: cover;
+//  -o-background-size: cover;
+//  background-size: cover;
+//  background-size: cover; // cover|contain
+//  height: 100%;
+//  //margin: $topbar-height;
+//  @include background-image(url('/assets/images/DNM_Logo_Color_HR_OLs_Fin_052014.png'));
+//  background: url(/assets/images/DNM_Logo_Color_HR_OLs_Fin_052014.png) no-repeat center center fixed;
+//  -webkit-background-size: cover;
+//  -moz-background-size: cover;
+//  -o-background-size: cover;
+//  background-size: cover;
+//  background-size: cover; // cover|contain
 
-  background-color: #fff;
-
-  font-family: 'Sorts Mill Goudy', serif;
-
-  /* Normal without line-height change
-  position: relative;
-  top: 50%;
-  height: 3em;
-  font-size: 3em;
-  margin-top: -1.5em;
-  text-align: center;
-  background: #fff;
-  */
-
+//  background-color: #fff;
+//
+//  font-family: 'Sorts Mill Goudy', serif;
+//
+//  /* Normal without line-height change
+//  position: relative;
+//  top: 50%;
+//  height: 3em;
+//  font-size: 3em;
+//  margin-top: -1.5em;
+//  text-align: center;
+//  background: #fff;
+//  */
+//
+//  height: 100%;
+//  margin-bottom: $topbar-height;
+  /*
   $welcome-line-height: 2em;
   $welcome-font-size: 4em;
 
@@ -875,4 +920,5 @@ footer {
   margin-top: -( ($welcome-font-size/2) + ($welcome-line-height/2) );
   text-align: center;
   line-height: $welcome-line-height;
+  */
 }

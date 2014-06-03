@@ -13,10 +13,14 @@ append scripts
 block content
   //.bg-pic(style="background-image: url(/assets/images/main.jpg);background-size: cover;")
   .bg-pic
-    .welcome
-      | Welcome to
-      br
-      | Dynamic Natural Medicine
+    .row(style="height: 100%;width: 100%;max-width:100%;")
+      //.small-11.small-centered.columns(style="height: 100%;width: 100%;")
+      .small-11.columns(style="height: 100%;width: 100%;")
+        .img
+    //.welcome
+      //| Welcome to
+      //br
+      //| Dynamic Natural Medicine
 
   meta(itemprop="image", content=meta.image)
   section.entry

@@ -33,7 +33,6 @@ app.post("/contact", function(req, res) {
   console.log("contact post", req.body);
 
   // TODO: validate name, email, message;
-
   var mailOpts, smtpTrans;
 
   //Setup Nodemailer transport, I chose gmail. Create an application-specific password to avoid problems.
@@ -45,26 +44,13 @@ app.post("/contact", function(req, res) {
     }
   });
 
-  /*
-  smtpTrans = nodemailer.createTransport("SMTP", {
-    host: "smtp.gmail.com", // hostname
-    secureConnection: true, // use SSL
-    port: 465, // port for secure SMTP
-    auth: {
-      user: nconf.get("google:gmail:user"),
-      pass: nconf.get("google:gmail:password")
-    }
-  });
-  */
-
   //Mail options
   mailOpts = {
     from: req.body.name + ' &lt;' + req.body.email + '&gt;',
-    //to: 'info@dynamicnaturalmedicine.com',
-    to: 'doug@dynamicnaturalmedicine.com',
+    to: 'info@dynamicnaturalmedicine.com',
     subject: '(' + req.body.name + ') Contact Us - DynamicNaturalMedicine.com',
     //text: "name: " + req.body.name + " ::: " + "email: " + req.body.email + " ::: " + "message: " + req.body.message,
-    html: "name: " + req.body.name + "</br>" + "email: " + req.body.email + "</br>" + "message: " + req.body.message
+    html: "<html><body><div>name: " + req.body.name + "</div><div>" + "email: " + req.body.email + "</div><div>" + "message: " + req.body.message +"</div></body></html>"
   };
 
   smtpTrans.sendMail(mailOpts, function (error, response) {

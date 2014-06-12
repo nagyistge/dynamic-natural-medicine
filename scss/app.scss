@@ -922,3 +922,10 @@ footer {
   line-height: $welcome-line-height;
   */
 }
+
+.translate {
+  position: absolute;
+  right: 0;
+  margin: 2rem;
+  z-index: 100;
+}

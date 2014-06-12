@@ -11,8 +11,19 @@ append scripts
   script(src='js/app.min.js')
 
 block content
+  .translate
+    div(id="google_translate_element")
+      script.
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'es,km,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-47356941-1'}, 'google_translate_element');
+        }
+      script(type="text/javascript", src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit")
   //.bg-pic(style="background-image: url(/assets/images/main.jpg);background-size: cover;")
   .bg-pic
+    .row
+      .large-3.columns.right
+
+
     .row(style="height: 100%;width: 100%;max-width:100%;")
       //.small-11.small-centered.columns(style="height: 100%;width: 100%;")
       .small-11.columns(style="height: 100%;width: 100%;")
@@ -50,6 +61,8 @@ block content
           | &nbsp;to schedule an appointment. Once an appointment is booked the necessary New Patient forms will be available from the
           a(href=info.links.patient.portal, target="_blank") &nbsp;Patient Portal
           |.
+          br
+          | Dr. Read is fluent in English and Khmer.
 
       include includes/natropathic_definition
       include includes/accupunture_definition

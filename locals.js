@@ -1,14 +1,14 @@
 var locals = {
   info: {
     address: {
-      line1: "3216 NE 45th PL",
-      line2: "Suite 212",
-      city: "Seattle",
+      line1: "1830 Bickford Avenue",
+      line2: "Suite 201",
+      city: "Snohomish",
       state: "WA",
-      zip: "98105"
+      zip: "98290"
     },
-    phone: "2065188938",
-    phoneFormatted: "(206) 518-8938",
+    phone: "3602824014",
+    phoneFormatted: "(360) 282-4014",
     email: "info@dynamicnaturalmedicine.com",
 
     links: {

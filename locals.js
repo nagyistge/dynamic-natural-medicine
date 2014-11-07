@@ -1,11 +1,22 @@
 var locals = {
   info: {
-    address: {
-      line1: "1830 Bickford Avenue",
-      line2: "Suite 201",
-      city: "Snohomish",
-      state: "WA",
-      zip: "98290"
+    addresses: {
+      redmond: {
+        title: "Redmond",
+        line1: "16563 Redmond Way",
+        line2: "Suite D",
+        city: "Redmond",
+        state: "WA",
+        zip: "98052"
+      },
+      snohomish: {
+        title: "Snohomish",
+        line1: "1830 Bickford Avenue",
+        line2: "Suite 201",
+        city: "Snohomish",
+        state: "WA",
+        zip: "98290"
+      }
     },
     phone: "3602824014",
     phoneFormatted: "(360) 282-4014",
@@ -49,6 +60,7 @@ function oneLineAddress(address) {
   return address.line1 + " | " + address.line2 + ", " + address.city + ", " + address.state + ", " + address.zip;
 }
 
-locals.info.address.oneline = oneLineAddress(locals.info.address);
+locals.info.addresses.redmond.oneline = oneLineAddress(locals.info.addresses.redmond);
+locals.info.addresses.snohomish.oneline = oneLineAddress(locals.info.addresses.snohomish);
 
 module.exports = locals;

@@ -14,17 +14,20 @@
       span
         a(href="tel:" + info.phone)
           span(itemprop="telephone")= info.phoneFormatted
-  section
-    .address(itemprop="address", itemscope, itemtype="http://schema.org/PostalAddress")
-      span
-        a(href="//maps.google.com/maps?saddr=&daddr=" + encodeURIComponent(info.address.oneline), target="_blank")
-          span(itemprop="streetAddress") #{info.address.line1} | #{info.address.line2}
-          br
-          span(itemprop="addressLocality") #{info.address.city}
-          | ,&nbsp;
-          span(itemprop="addressRegion") #{info.address.state}
-          | ,&nbsp;
-          span(itemprop="postalCode") #{info.address.zip}
+
+  each address, index in info.addresses
+    section
+      .address(itemprop="address", itemscope, itemtype="http://schema.org/PostalAddress")
+        span
+          .title= address.title
+          a(href="//maps.google.com/maps?saddr=&daddr=" + encodeURIComponent(address.oneline), target="_blank")
+            span(itemprop="streetAddress") #{address.line1} | #{address.line2}
+            br
+            span(itemprop="addressLocality") #{address.city}
+            | ,&nbsp;
+            span(itemprop="addressRegion") #{address.state}
+            | ,&nbsp;
+            span(itemprop="postalCode") #{address.zip}
   section
     .address-message
       span We will be opening another location on the Eastside, stay tuned.

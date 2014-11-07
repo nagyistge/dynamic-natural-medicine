@@ -20,6 +20,7 @@ footer
         li
           a(href='//twitter.com/dynnatmed', target='_blank')
             i.fa.fa-twitter
-        li
-          a(href='http://maps.apple.com/?daddr='+encodeURIComponent(info.address.oneline)+',+CA&saddr=')
-            i.fa.fa-map-marker
+        each address, index in info.addresses
+          li(title=address.title)
+            a(href='http://maps.apple.com/?daddr='+encodeURIComponent(address.oneline)+',+CA&saddr=')
+              i.fa.fa-map-marker

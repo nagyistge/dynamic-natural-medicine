@@ -18,8 +18,8 @@ var locals = {
         zip: "98290"
       }
     },
-    phone: "3602824014",
-    phoneFormatted: "(360) 282-4014",
+    phone: "4252985366",
+    phoneFormatted: "(425) 298-5366",
     email: "info@dynamicnaturalmedicine.com",
 
     links: {
